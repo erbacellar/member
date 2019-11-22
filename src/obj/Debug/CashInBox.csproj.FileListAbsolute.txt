@@ -1,0 +1,109 @@
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\bin\Debug\Alpha.exe.config
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\Alpha.exe
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\Alpha.pdb
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\bin\Debug\Alpha.exe
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\bin\Debug\Alpha.pdb
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\bin\Debug\EntityFramework.dll
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\bin\Debug\EntityFramework.xml
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.csprojResolveAssemblyReference.cache
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.ProgressoAtualizacao.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.ProgressoGrafico.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.ProgressoPesquisa.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.ProgressoRelatorio.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.ProgressoSalvar.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.Properties.Resources.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmAbertura.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmConfigImagemCabecalho.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmConsultarCep.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmConsultarFornecedor.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmConsultarFuncionario.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmConsultarUnidade.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmFornecedor.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmFuncionario.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmLogar.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmPerfil.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmPrincipal.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmResultadoBuscaCep.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmUnidade.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.frmUsuario.resources
+Y:\Alpha - Sistemas de Restaurante\Alpha\Alpha\obj\Debug\CashInBox.csproj.GenerateResource.Cache
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\EntityFramework.dll
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\EntityFramework.xml
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.csprojResolveAssemblyReference.cache
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoAtualizacao.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoGrafico.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoPesquisa.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoRelatorio.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoSalvar.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.Properties.Resources.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmAbertura.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConfigImagemCabecalho.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarCep.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarFornecedor.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarFuncionario.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarUnidade.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmFornecedor.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmFuncionario.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmLogar.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmPerfil.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmPrincipal.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmResultadoBuscaCep.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmUnidade.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmUsuario.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.csproj.GenerateResource.Cache
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmModelo.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.exe.config
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.exe.manifest
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.application
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.exe
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.pdb
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.exe.manifest
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.application
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.exe
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.pdb
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmSelecionarTipoAcesso.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmCheque.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmRetirada.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmDespesa.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmFechamentoCaixa.resources
+Y:\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarFechamentoCaixa.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.exe.config
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.exe
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.pdb
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.csprojResolveAssemblyReference.cache
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoAtualizacao.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoGrafico.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoPesquisa.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoRelatorio.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.ProgressoSalvar.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmCheque.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarFechamentoCaixa.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmRetirada.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmDespesa.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmFechamentoCaixa.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmModelo.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmSelecionarTipoAcesso.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.Properties.Resources.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmAbertura.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConfigImagemCabecalho.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarCep.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarFornecedor.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarFuncionario.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmConsultarUnidade.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmFornecedor.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmFuncionario.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmLogar.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmPerfil.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmPrincipal.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmResultadoBuscaCep.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmUnidade.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.frmUsuario.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.csproj.GenerateResource.Cache
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.exe.manifest
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.application
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.exe
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\CashInBox.pdb
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\bin\Debug\EntityFramework.xml
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.exe.manifest
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\CashInBox - Sistemas de Restaurante\CashInBox\CashInBox\obj\Debug\CashInBox.application
