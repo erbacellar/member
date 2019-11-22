@@ -144,59 +144,59 @@
     <Compile Include="DAO\PerfilDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\VersaoAtualDAO.cs" />
-    <Compile Include="dsAniversariantes.Designer.cs">
+    <Compile Include="DataSets\dsAniversariantes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsAniversariantes.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsDoutrinario.Designer.cs">
+    <Compile Include="DataSets\dsDoutrinario.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDoutrinario.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsFichaCadMembro.cs">
+    <Compile Include="DataSets\dsFichaCadMembro.cs">
       <DependentUpon>dsFichaCadMembro.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsFichaCadMembro.Designer.cs">
+    <Compile Include="DataSets\dsFichaCadMembro.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsFichaCadMembro.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsMembros.Designer.cs">
+    <Compile Include="DataSets\dsMembros.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMembros.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsMembrosPorGrupo.cs">
+    <Compile Include="DataSets\dsMembrosPorGrupo.cs">
       <DependentUpon>dsMembrosPorGrupo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsMembrosPorGrupo.Designer.cs">
+    <Compile Include="DataSets\dsMembrosPorGrupo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMembrosPorGrupo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsRelatorioBiblioteca.Designer.cs">
+    <Compile Include="DataSets\dsRelatorioBiblioteca.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRelatorioBiblioteca.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsRelatorioDivulgacao.cs">
+    <Compile Include="DataSets\dsRelatorioDivulgacao.cs">
       <DependentUpon>dsRelatorioDivulgacao.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsRelatorioDivulgacao.Designer.cs">
+    <Compile Include="DataSets\dsRelatorioDivulgacao.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRelatorioDivulgacao.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsRelatorioFinanceiro.cs">
+    <Compile Include="DataSets\dsRelatorioFinanceiro.cs">
       <DependentUpon>dsRelatorioFinanceiro.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsRelatorioFinanceiro.Designer.cs">
+    <Compile Include="DataSets\dsRelatorioFinanceiro.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRelatorioFinanceiro.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsVoluntarios.Designer.cs">
+    <Compile Include="DataSets\dsVoluntarios.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsVoluntarios.xsd</DependentUpon>
@@ -210,58 +210,58 @@
     <Compile Include="frmModelo.Designer.cs">
       <DependentUpon>frmModelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelatorioFichaCadastroMembro.cs">
+    <Compile Include="Reports\frmRelatorioFichaCadastroMembro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelatorioFichaCadastroMembro.Designer.cs">
+    <Compile Include="Reports\frmRelatorioFichaCadastroMembro.Designer.cs">
       <DependentUpon>frmRelatorioFichaCadastroMembro.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelatorioAniversariantes.cs">
+    <Compile Include="Reports\frmRelatorioAniversariantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelatorioAniversariantes.Designer.cs">
+    <Compile Include="Reports\frmRelatorioAniversariantes.Designer.cs">
       <DependentUpon>frmRelatorioAniversariantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelatorioFinanceiro2Isentos.cs">
+    <Compile Include="Reports\frmRelatorioFinanceiro2Isentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelatorioFinanceiro2Isentos.Designer.cs">
+    <Compile Include="Reports\frmRelatorioFinanceiro2Isentos.Designer.cs">
       <DependentUpon>frmRelatorioFinanceiro2Isentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelatorioMembrosPorGrupo.cs">
+    <Compile Include="Reports\frmRelatorioMembrosPorGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelatorioMembrosPorGrupo.Designer.cs">
+    <Compile Include="Reports\frmRelatorioMembrosPorGrupo.Designer.cs">
       <DependentUpon>frmRelatorioMembrosPorGrupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelatorioVoluntarios.cs">
+    <Compile Include="Reports\frmRelatorioVoluntarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelatorioVoluntarios.Designer.cs">
+    <Compile Include="Reports\frmRelatorioVoluntarios.Designer.cs">
       <DependentUpon>frmRelatorioVoluntarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelBiblioteca.cs">
+    <Compile Include="Reports\frmRelBiblioteca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelBiblioteca.Designer.cs">
+    <Compile Include="Reports\frmRelBiblioteca.Designer.cs">
       <DependentUpon>frmRelBiblioteca.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelDivulgacao.cs">
+    <Compile Include="Reports\frmRelDivulgacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelDivulgacao.Designer.cs">
+    <Compile Include="Reports\frmRelDivulgacao.Designer.cs">
       <DependentUpon>frmRelDivulgacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelDoutrinario.cs">
+    <Compile Include="Reports\frmRelDoutrinario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelDoutrinario.Designer.cs">
+    <Compile Include="Reports\frmRelDoutrinario.Designer.cs">
       <DependentUpon>frmRelDoutrinario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelFinanceiro.cs">
+    <Compile Include="Reports\frmRelFinanceiro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelFinanceiro.Designer.cs">
+    <Compile Include="Reports\frmRelFinanceiro.Designer.cs">
       <DependentUpon>frmRelFinanceiro.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSelecionarTipoAcesso.cs">
@@ -287,8 +287,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SenhaAdmin.cs" />
-    <Compile Include="Versao.cs" />
+    <Compile Include="Utils\SenhaAdmin.cs" />
+    <Compile Include="Utils\Versao.cs" />
     <Compile Include="Model\VersaoAtual.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -396,31 +396,31 @@
     <EmbeddedResource Include="frmModelo.resx">
       <DependentUpon>frmModelo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelatorioFichaCadastroMembro.resx">
+    <EmbeddedResource Include="Reports\frmRelatorioFichaCadastroMembro.resx">
       <DependentUpon>frmRelatorioFichaCadastroMembro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelatorioAniversariantes.resx">
+    <EmbeddedResource Include="Reports\frmRelatorioAniversariantes.resx">
       <DependentUpon>frmRelatorioAniversariantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelatorioFinanceiro2Isentos.resx">
+    <EmbeddedResource Include="Reports\frmRelatorioFinanceiro2Isentos.resx">
       <DependentUpon>frmRelatorioFinanceiro2Isentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelatorioMembrosPorGrupo.resx">
+    <EmbeddedResource Include="Reports\frmRelatorioMembrosPorGrupo.resx">
       <DependentUpon>frmRelatorioMembrosPorGrupo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelatorioVoluntarios.resx">
+    <EmbeddedResource Include="Reports\frmRelatorioVoluntarios.resx">
       <DependentUpon>frmRelatorioVoluntarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelBiblioteca.resx">
+    <EmbeddedResource Include="Reports\frmRelBiblioteca.resx">
       <DependentUpon>frmRelBiblioteca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelDivulgacao.resx">
+    <EmbeddedResource Include="Reports\frmRelDivulgacao.resx">
       <DependentUpon>frmRelDivulgacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelDoutrinario.resx">
+    <EmbeddedResource Include="Reports\frmRelDoutrinario.resx">
       <DependentUpon>frmRelDoutrinario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelFinanceiro.resx">
+    <EmbeddedResource Include="Reports\frmRelFinanceiro.resx">
       <DependentUpon>frmRelFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelecionarTipoAcesso.resx">
@@ -431,15 +431,15 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="relBiblioteca.rdlc" />
-    <EmbeddedResource Include="relDivulgacao.rdlc" />
-    <EmbeddedResource Include="relFinanceiro.rdlc" />
-    <EmbeddedResource Include="relVoluntarios.rdlc" />
-    <EmbeddedResource Include="rptAniversariantes.rdlc" />
-    <EmbeddedResource Include="rptDoutrinario.rdlc" />
-    <EmbeddedResource Include="rptFichaCadMembro.rdlc" />
-    <EmbeddedResource Include="rptRelatorioFinanceiro2Isentos.rdlc" />
-    <EmbeddedResource Include="rptRelatorioMembrosPorGrupo.rdlc" />
+    <EmbeddedResource Include="Reports\relBiblioteca.rdlc" />
+    <EmbeddedResource Include="Reports\relDivulgacao.rdlc" />
+    <EmbeddedResource Include="Reports\relFinanceiro.rdlc" />
+    <EmbeddedResource Include="Reports\relVoluntarios.rdlc" />
+    <EmbeddedResource Include="Reports\rptAniversariantes.rdlc" />
+    <EmbeddedResource Include="Reports\rptDoutrinario.rdlc" />
+    <EmbeddedResource Include="Reports\rptFichaCadMembro.rdlc" />
+    <EmbeddedResource Include="Reports\rptRelatorioFinanceiro2Isentos.rdlc" />
+    <EmbeddedResource Include="Reports\rptRelatorioMembrosPorGrupo.rdlc" />
     <EmbeddedResource Include="View\frmAbertura.resx">
       <DependentUpon>frmAbertura.cs</DependentUpon>
     </EmbeddedResource>
@@ -475,103 +475,103 @@
     </EmbeddedResource>
     <None Include="CashInBox_1_TemporaryKey.pfx" />
     <None Include="CashInBox_TemporaryKey.pfx" />
-    <None Include="dsAniversariantes.xsc">
+    <None Include="DataSets\dsAniversariantes.xsc">
       <DependentUpon>dsAniversariantes.xsd</DependentUpon>
     </None>
-    <None Include="dsAniversariantes.xsd">
+    <None Include="DataSets\dsAniversariantes.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsAniversariantes.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsAniversariantes.xss">
+    <None Include="DataSets\dsAniversariantes.xss">
       <DependentUpon>dsAniversariantes.xsd</DependentUpon>
     </None>
-    <None Include="dsDoutrinario.xsc">
+    <None Include="DataSets\dsDoutrinario.xsc">
       <DependentUpon>dsDoutrinario.xsd</DependentUpon>
     </None>
-    <None Include="dsDoutrinario.xsd">
+    <None Include="DataSets\dsDoutrinario.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsDoutrinario.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsDoutrinario.xss">
+    <None Include="DataSets\dsDoutrinario.xss">
       <DependentUpon>dsDoutrinario.xsd</DependentUpon>
     </None>
-    <None Include="dsFichaCadMembro.xsc">
+    <None Include="DataSets\dsFichaCadMembro.xsc">
       <DependentUpon>dsFichaCadMembro.xsd</DependentUpon>
     </None>
-    <None Include="dsFichaCadMembro.xsd">
+    <None Include="DataSets\dsFichaCadMembro.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsFichaCadMembro.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsFichaCadMembro.xss">
+    <None Include="DataSets\dsFichaCadMembro.xss">
       <DependentUpon>dsFichaCadMembro.xsd</DependentUpon>
     </None>
-    <None Include="dsMembros.xsc">
+    <None Include="DataSets\dsMembros.xsc">
       <DependentUpon>dsMembros.xsd</DependentUpon>
     </None>
-    <None Include="dsMembros.xsd">
+    <None Include="DataSets\dsMembros.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsMembros.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsMembros.xss">
+    <None Include="DataSets\dsMembros.xss">
       <DependentUpon>dsMembros.xsd</DependentUpon>
     </None>
-    <None Include="dsMembrosPorGrupo.xsc">
+    <None Include="DataSets\dsMembrosPorGrupo.xsc">
       <DependentUpon>dsMembrosPorGrupo.xsd</DependentUpon>
     </None>
-    <None Include="dsMembrosPorGrupo.xsd">
+    <None Include="DataSets\dsMembrosPorGrupo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsMembrosPorGrupo.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsMembrosPorGrupo.xss">
+    <None Include="DataSets\dsMembrosPorGrupo.xss">
       <DependentUpon>dsMembrosPorGrupo.xsd</DependentUpon>
     </None>
-    <None Include="dsRelatorioBiblioteca.xsc">
+    <None Include="DataSets\dsRelatorioBiblioteca.xsc">
       <DependentUpon>dsRelatorioBiblioteca.xsd</DependentUpon>
     </None>
-    <None Include="dsRelatorioBiblioteca.xsd">
+    <None Include="DataSets\dsRelatorioBiblioteca.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsRelatorioBiblioteca.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsRelatorioBiblioteca.xss">
+    <None Include="DataSets\dsRelatorioBiblioteca.xss">
       <DependentUpon>dsRelatorioBiblioteca.xsd</DependentUpon>
     </None>
-    <None Include="dsRelatorioDivulgacao.xsc">
+    <None Include="DataSets\dsRelatorioDivulgacao.xsc">
       <DependentUpon>dsRelatorioDivulgacao.xsd</DependentUpon>
     </None>
-    <None Include="dsRelatorioDivulgacao.xsd">
+    <None Include="DataSets\dsRelatorioDivulgacao.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsRelatorioDivulgacao.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsRelatorioDivulgacao.xss">
+    <None Include="DataSets\dsRelatorioDivulgacao.xss">
       <DependentUpon>dsRelatorioDivulgacao.xsd</DependentUpon>
     </None>
-    <None Include="dsRelatorioFinanceiro.xsc">
+    <None Include="DataSets\dsRelatorioFinanceiro.xsc">
       <DependentUpon>dsRelatorioFinanceiro.xsd</DependentUpon>
     </None>
-    <None Include="dsRelatorioFinanceiro.xsd">
+    <None Include="DataSets\dsRelatorioFinanceiro.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsRelatorioFinanceiro.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsRelatorioFinanceiro.xss">
+    <None Include="DataSets\dsRelatorioFinanceiro.xss">
       <DependentUpon>dsRelatorioFinanceiro.xsd</DependentUpon>
     </None>
-    <None Include="dsVoluntarios.xsc">
+    <None Include="DataSets\dsVoluntarios.xsc">
       <DependentUpon>dsVoluntarios.xsd</DependentUpon>
     </None>
-    <None Include="dsVoluntarios.xsd">
+    <None Include="DataSets\dsVoluntarios.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsVoluntarios.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsVoluntarios.xss">
+    <None Include="DataSets\dsVoluntarios.xss">
       <DependentUpon>dsVoluntarios.xsd</DependentUpon>
     </None>
     <None Include="Member_TemporaryKey.pfx" />
@@ -714,6 +714,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
