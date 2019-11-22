@@ -304,13 +304,6 @@
     <Compile Include="Utils\RecuperarImpressora.cs" />
     <Compile Include="Utils\RecuperarNumSerieHDD.cs" />
     <Compile Include="Utils\Remover.cs" />
-    <Compile Include="Utils\StoredProcedures\StoredProcedureLimparItemFornecedorServicos.cs" />
-    <Compile Include="Utils\StoredProcedures\StoredProcedureLimparItemsFornecedor.cs" />
-    <Compile Include="Utils\StoredProcedures\StoredProcedureLimparItemsFuncionalidade.cs" />
-    <Compile Include="Utils\StoredProcedures\StoredProcedureLimparProdutosOrcamento.cs" />
-    <Compile Include="Utils\StoredProcedures\StoredProcedureLimparSelosLacres.cs" />
-    <Compile Include="Utils\StoredProcedures\StoredProcedureLimparServicosOrcamento.cs" />
-    <Compile Include="Utils\StoredProcedures\StoredProcedureLimparTacografos.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="Utils\ValidaCEP.cs" />
     <Compile Include="Utils\ValidaCnpj.cs" />

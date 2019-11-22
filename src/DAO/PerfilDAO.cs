@@ -70,7 +70,6 @@ namespace CashInBox
                 }
 
                 db.SaveChanges();
-                StoredProcedureLimparItemsFuncionalidade.Executar();
                 return true;
             }
             catch
@@ -88,7 +87,6 @@ namespace CashInBox
                 Perfil = db.Perfis.First(x => x.Id == Perfil.Id);
                 db.Perfis.Remove(Perfil);
                 db.SaveChanges();
-                StoredProcedureLimparItemsFuncionalidade.Executar();
                 return true;
             }
             catch
