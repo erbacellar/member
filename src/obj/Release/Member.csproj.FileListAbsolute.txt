@@ -1,0 +1,73 @@
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.exe.config
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoAtualizacao.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoGrafico.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoPesquisa.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoRelatorio.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoSalvar.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmModelo.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmRelatorioFichaCadastroMembro.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmSelecionarTipoAcesso.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.Properties.Resources.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmAbertura.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmConfigImagemCabecalho.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmConsultarCep.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmConsultarMembro.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmConsultarFuncionario.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmMembro.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmFuncionario.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmLogar.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmPerfil.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmPrincipal.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmUsuario.resources
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\Member.csproj.GenerateResource.Cache
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\RdlCompile.cache
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\RdlCompile.compiled
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.exe.manifest
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.application
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.exe
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.pdb
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\EntityFramework.dll
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\EntityFramework.xml
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\Member.csprojResolveAssemblyReference.cache
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.exe.manifest
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.application
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.exe
+C:\Users\Ernane\Documents\Desenvolvimento - Fenacam\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.pdb
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.exe.config
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.exe
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.pdb
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.exe.manifest
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.application
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.exe
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\CashInBox.pdb
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\EntityFramework.dll
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\bin\Release\EntityFramework.xml
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\Member.csprojResolveAssemblyReference.cache
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoAtualizacao.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoGrafico.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoPesquisa.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoRelatorio.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.ProgressoSalvar.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmModelo.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmRelatorioFichaCadastroMembro.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmSelecionarTipoAcesso.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.Properties.Resources.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmAbertura.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmConfigImagemCabecalho.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmConsultarCep.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmConsultarMembro.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmConsultarFuncionario.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmMembro.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmFuncionario.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmLogar.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmPerfil.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmPrincipal.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmUsuario.resources
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\Member.csproj.GenerateResource.Cache
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\RdlCompile.cache
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\RdlCompile.compiled
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.exe.manifest
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.application
+C:\Users\Ernane\Documents\Desenvolvimento\Member - Sistema de Gerenciamento do Centro Espirita\Member\Member\obj\Release\CashInBox.frmRelatorioMembrosPorGrupo.resources

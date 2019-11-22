@@ -1,0 +1,1233 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Management;
+using ComponentFactory.Krypton.Toolkit;
+using System.Globalization;
+
+namespace CashInBox
+{
+    public class Utils
+    {
+        public static void LimparCampos(Form f)
+        {
+
+            foreach (Control c in f.Controls)
+            {
+                try
+                {
+                    if (c is DateTimePicker)
+                    {
+                        ((DateTimePicker)(c)).Value = DateTime.Now; ;
+                    }
+                    if (c is TextBox)
+                    {
+                        ((TextBox)(c)).Clear();
+                    }
+                    if (c is MaskedTextBox)
+                    {
+                        ((MaskedTextBox)(c)).Clear();
+                    }
+                    if (c is DataGridView)
+                    {
+                        ((DataGridView)(c)).Rows.Clear();
+                    }
+                    if (c is ComboBox)
+                    {
+                        ((ComboBox)(c)).SelectedIndex = -1;
+                    }
+                    if (c is RadioButton)
+                    {
+                        ((RadioButton)(c)).Checked = false;
+                    }
+                    if (c is CheckBox)
+                    {
+                        ((CheckBox)(c)).Checked = false;
+                    }
+                    if (c is GroupBox)
+                    {
+                        foreach (Control x in ((GroupBox)(c)).Controls)
+                        {
+                            if (x is TextBox)
+                            {
+                                ((TextBox)(x)).Clear();
+                            }
+                            if (x is MaskedTextBox)
+                            {
+                                ((MaskedTextBox)(x)).Clear();
+                            }
+                            if (x is ComboBox)
+                            {
+                                ((ComboBox)(x)).SelectedIndex = -1;
+                            }
+                            if (x is RadioButton)
+                            {
+                                ((RadioButton)(x)).Checked = false;
+                            }
+                            if (x is DataGridView)
+                            {
+                                ((DataGridView)(x)).Rows.Clear();
+                            }
+                            if (x is CheckBox)
+                            {
+                                ((CheckBox)(x)).Checked = false;
+                            }
+                        }
+                    }
+                    if (c is TabControl)
+                    {
+                        foreach (Control x in ((TabControl)(c)).Controls)
+                        {
+                            if (x is TabPage)
+                            {
+                                foreach (Control y in ((TabPage)(x)).Controls)
+                                {
+                                    if (y is DateTimePicker)
+                                    {
+                                        ((DateTimePicker)(y)).Value = DateTime.Now; ;
+                                    }
+                                    if (y is TextBox)
+                                    {
+                                        ((TextBox)(y)).Clear();
+                                    }
+                                    if (y is MaskedTextBox)
+                                    {
+                                        ((MaskedTextBox)(y)).Clear();
+                                    }
+                                    if (y is DataGridView)
+                                    {
+                                        ((DataGridView)(y)).Rows.Clear();
+                                    }
+                                    if (y is ComboBox)
+                                    {
+                                        ((ComboBox)(y)).SelectedIndex = -1;
+                                    }
+                                    if (y is RadioButton)
+                                    {
+                                        ((RadioButton)(y)).Checked = false;
+                                    }
+                                    if (y is GroupBox)
+                                    {
+                                        foreach (Control p in ((GroupBox)(y)).Controls)
+                                        {
+                                            if (p is TextBox)
+                                            {
+                                                ((TextBox)(p)).Clear();
+                                            }
+                                            if (p is MaskedTextBox)
+                                            {
+                                                ((MaskedTextBox)(p)).Clear();
+                                            }
+                                            if (p is ComboBox)
+                                            {
+                                                ((ComboBox)(p)).SelectedIndex = -1;
+                                            }
+                                            if (p is RadioButton)
+                                            {
+                                                ((RadioButton)(p)).Checked = false;
+                                            }
+                                            if (p is DataGridView)
+                                            {
+                                                ((DataGridView)(p)).Rows.Clear();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (c is Panel)
+                    {
+                        foreach (Control x in ((Panel)(c)).Controls)
+                        {
+
+                            if (x is DateTimePicker)
+                            {
+                                ((DateTimePicker)(x)).Value = DateTime.Now; ;
+                            }
+                            if (x is TextBox)
+                            {
+                                ((TextBox)(x)).Clear();
+                            }
+                            if (x is MaskedTextBox)
+                            {
+                                ((MaskedTextBox)(x)).Clear();
+                            }
+                            if (x is DataGridView)
+                            {
+                                ((DataGridView)(x)).Rows.Clear();
+                            }
+                            if (x is ComboBox)
+                            {
+                                ((ComboBox)(x)).SelectedIndex = -1;
+                            }
+                            if (x is RadioButton)
+                            {
+                                ((RadioButton)(x)).Checked = false;
+                            }
+                            if (x is GroupBox)
+                            {
+                                foreach (Control y in ((GroupBox)(x)).Controls)
+                                {
+                                    if (y is TextBox)
+                                    {
+                                        ((TextBox)(y)).Clear();
+                                    }
+                                    if (y is MaskedTextBox)
+                                    {
+                                        ((MaskedTextBox)(y)).Clear();
+                                    }
+                                    if (y is ComboBox)
+                                    {
+                                        ((ComboBox)(y)).SelectedIndex = -1;
+                                    }
+                                    if (y is RadioButton)
+                                    {
+                                        ((RadioButton)(y)).Checked = false;
+                                    }
+                                    if (y is DataGridView)
+                                    {
+                                        ((DataGridView)(y)).Rows.Clear();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                }
+            }
+        }
+
+        public static void FocusInTextMask(object txtBox)
+        {
+            try
+            {
+                //faz o cast do tipo object para o tipo TextBox
+                TextBox t = txtBox as TextBox;
+                t.BackColor = Color.FromArgb(255,246,148);
+            }
+            catch
+            {
+                //faz o cast do tipo object para o tipo MaskedTextBox
+                MaskedTextBox m = txtBox as MaskedTextBox;
+                m.BackColor = Color.FromArgb(255, 246, 148);
+            }
+        }
+
+        public static void FocusInRichText(object richtxtBox)
+        {
+            //faz o cast do tipo object para o tipo RichTextBox
+            RichTextBox t = richtxtBox as RichTextBox;
+            t.BackColor = Color.FromArgb(255, 246, 148);
+        }
+
+        public static void FocusOutRichText(object richtxtBox)
+        {
+            //faz o cast do tipo object para o tipo RichTextBox
+            RichTextBox t = richtxtBox as RichTextBox;
+            t.BackColor = SystemColors.Window;
+        }
+
+        public static void FocusOutTextMask(object txtBox)
+        {
+            try
+            {
+                //faz o cast do tipo object para o tipo TextBox
+                TextBox t = txtBox as TextBox;
+                t.BackColor = Color.White;
+
+            }
+            catch
+            {
+                //faz o cast do tipo object para o tipo MaskedTextBox
+                MaskedTextBox m = txtBox as MaskedTextBox;
+                m.BackColor = Color.White;
+            }
+        }
+
+        public static void FocusInCombo(object combo)
+        {
+            //faz o cast do tipo object para o tipo TextBox
+            ComboBox c = combo as ComboBox;
+            c.BackColor = Color.FromArgb(255, 246, 148);
+        }
+
+        public static void FocusOutCombo(object combo)
+        {
+            //faz o cast do tipo object para o tipo TextBox
+            ComboBox c = combo as ComboBox;
+            c.BackColor = Color.White;
+        }
+
+        public static void Desabilitar(Form f)
+        {
+            foreach (Control c in f.Controls)
+            {
+                if (c is CheckedListBox)
+                {
+                    ((CheckedListBox)(c)).Enabled = false;
+                }
+                if (c is RichTextBox)
+                {
+                    ((RichTextBox)(c)).Enabled = false;
+                }
+                if (c is DateTimePicker)
+                {
+                    ((DateTimePicker)(c)).Enabled = false;
+                }
+                if (c is Button)
+                {
+                    ((Button)(c)).Enabled = false;
+                }
+                if (c is KryptonButton)
+                {
+                    ((KryptonButton)(c)).Enabled = false;
+                }
+                if (c is TextBox)
+                {
+                    ((TextBox)(c)).Enabled = false;
+                }
+                if (c is MaskedTextBox)
+                {
+                    ((MaskedTextBox)(c)).Enabled = false;
+                }
+                if (c is DataGridView)
+                {
+                    ((DataGridView)(c)).Enabled = false;
+                }
+                if (c is ComboBox)
+                {
+                    ((ComboBox)(c)).Enabled = false;
+                }
+                if (c is RadioButton)
+                {
+                    ((RadioButton)(c)).Enabled = false;
+                }
+                if (c is CheckBox)
+                {
+                    ((CheckBox)(c)).Enabled = false;
+                }
+                if (c is TreeView)
+                {
+                    ((TreeView)c).Enabled = false;
+                    ((TreeView)c).BackColor = SystemColors.ControlLight;
+                }
+                if (c is GroupBox)
+                {
+                    foreach (Control x in ((GroupBox)(c)).Controls)
+                    {
+                        if (x is DateTimePicker)
+                        {
+                            ((DateTimePicker)(x)).Enabled = false;
+                        }
+                        if (x is TextBox)
+                        {
+                            ((TextBox)(x)).Enabled = false;
+                        }
+                        if (x is MaskedTextBox)
+                        {
+                            ((MaskedTextBox)(x)).Enabled = false;
+                        }
+                        if (x is ComboBox)
+                        {
+                            ((ComboBox)(x)).Enabled = false;
+                        }
+                        if (x is RadioButton)
+                        {
+                            ((RadioButton)(x)).Enabled = false;
+                        }
+                        if (x is Button)
+                        {
+                            ((Button)(x)).Enabled = false;
+                        }
+                        if (x is KryptonButton)
+                        {
+                            ((KryptonButton)(x)).Enabled = false;
+                        }
+                        if (x is DataGridView)
+                        {
+                            ((DataGridView)(x)).Enabled = false;
+                        }
+                        if (x is CheckBox)
+                        {
+                            ((CheckBox)(x)).Enabled = false;
+                        }
+                    }
+                }
+                if (c is TabControl)
+                {
+                    foreach (Control x in ((TabControl)(c)).Controls)
+                    {
+                        if (x is TabPage)
+                        {
+                            foreach (Control y in ((TabPage)(x)).Controls)
+                            {
+                                if (y is CheckedListBox)
+                                {
+                                    ((CheckedListBox)(y)).Enabled = false;
+                                }
+                                if (y is RichTextBox)
+                                {
+                                    ((RichTextBox)(y)).Enabled = false;
+                                }
+                                if (y is DateTimePicker)
+                                {
+                                    ((DateTimePicker)(y)).Enabled = false;
+                                }
+                                if (y is Button)
+                                {
+                                    ((Button)(y)).Enabled = false;
+                                }
+                                if (y is KryptonButton)
+                                {
+                                    ((KryptonButton)(y)).Enabled = false;
+                                }
+                                if (y is TextBox)
+                                {
+                                    ((TextBox)(y)).Enabled = false;
+                                }
+                                if (y is MaskedTextBox)
+                                {
+                                    ((MaskedTextBox)(y)).Enabled = false;
+                                }
+                                if (y is DataGridView)
+                                {
+                                    ((DataGridView)(y)).Enabled = false;
+                                }
+                                if (y is ComboBox)
+                                {
+                                    ((ComboBox)(y)).Enabled = false;
+                                }
+                                if (y is RadioButton)
+                                {
+                                    ((RadioButton)(y)).Enabled = false;
+                                }
+                                if (y is TreeView)
+                                {
+                                    ((TreeView)y).Enabled = false;
+                                    ((TreeView)y).BackColor = SystemColors.ControlLight;
+                                }
+                                if (y is GroupBox)
+                                {
+                                    foreach (Control p in ((GroupBox)(y)).Controls)
+                                    {
+                                        if (p is DateTimePicker)
+                                        {
+                                            ((DateTimePicker)(p)).Enabled = false;
+                                        }
+                                        if (p is TextBox)
+                                        {
+                                            ((TextBox)(p)).Enabled = false;
+                                        }
+                                        if (p is MaskedTextBox)
+                                        {
+                                            ((MaskedTextBox)(p)).Enabled = false;
+                                        }
+                                        if (p is ComboBox)
+                                        {
+                                            ((ComboBox)(p)).Enabled = false;
+                                        }
+                                        if (p is RadioButton)
+                                        {
+                                            ((RadioButton)(p)).Enabled = false;
+                                        }
+                                        if (p is Button)
+                                        {
+                                            ((Button)(p)).Enabled = false;
+                                        }
+                                        if (p is KryptonButton)
+                                        {
+                                            ((KryptonButton)(p)).Enabled = false;
+                                        }
+                                        if (p is DataGridView)
+                                        {
+                                            ((DataGridView)(p)).Enabled = false;
+                                        }
+                                        if (p is CheckBox)
+                                        {
+                                            ((CheckBox)(p)).Enabled = false;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+                if (c is Panel)
+                {
+                    foreach (Control x in ((Panel)(c)).Controls)
+                    {
+
+                        if (x is CheckedListBox)
+                        {
+                            ((CheckedListBox)(x)).Enabled = false;
+                        }
+                        if (x is RichTextBox)
+                        {
+                            ((RichTextBox)(x)).Enabled = false;
+                        }
+                        if (x is DateTimePicker)
+                        {
+                            ((DateTimePicker)(x)).Enabled = false;
+                        }
+                        if (x is Button)
+                        {
+                            ((Button)(x)).Enabled = false;
+                        }
+                        if (x is KryptonButton)
+                        {
+                            ((KryptonButton)(x)).Enabled = false;
+                        }
+                        if (x is TextBox)
+                        {
+                            ((TextBox)(x)).Enabled = false;
+                        }
+                        if (x is MaskedTextBox)
+                        {
+                            ((MaskedTextBox)(x)).Enabled = false;
+                        }
+                        if (x is DataGridView)
+                        {
+                            ((DataGridView)(x)).Enabled = false;
+                        }
+                        if (x is ComboBox)
+                        {
+                            ((ComboBox)(x)).Enabled = false;
+                        }
+                        if (x is RadioButton)
+                        {
+                            ((RadioButton)(x)).Enabled = false;
+                        }
+                        if (x is TreeView)
+                        {
+                            ((TreeView)x).Enabled = false;
+                            ((TreeView)x).BackColor = SystemColors.ControlLight;
+                        }
+                        if (x is GroupBox)
+                        {
+                            foreach (Control p in ((GroupBox)(x)).Controls)
+                            {
+                                if (p is DateTimePicker)
+                                {
+                                    ((DateTimePicker)(p)).Enabled = false;
+                                }
+                                if (p is TextBox)
+                                {
+                                    ((TextBox)(p)).Enabled = false;
+                                }
+                                if (p is MaskedTextBox)
+                                {
+                                    ((MaskedTextBox)(p)).Enabled = false;
+                                }
+                                if (p is ComboBox)
+                                {
+                                    ((ComboBox)(p)).Enabled = false;
+                                }
+                                if (p is RadioButton)
+                                {
+                                    ((RadioButton)(p)).Enabled = false;
+                                }
+                                if (p is Button)
+                                {
+                                    ((Button)(p)).Enabled = false;
+                                }
+                                if (p is KryptonButton)
+                                {
+                                    ((KryptonButton)(p)).Enabled = false;
+                                }
+                                if (p is DataGridView)
+                                {
+                                    ((DataGridView)(p)).Enabled = false;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        public static void Habilitar(Form f)
+        {
+            foreach (Control c in f.Controls)
+            {
+                if (c is CheckedListBox)
+                {
+                    ((CheckedListBox)(c)).Enabled = true;
+                }
+                if (c is RichTextBox)
+                {
+                    ((RichTextBox)(c)).Enabled = true;
+                }
+                if (c is DateTimePicker)
+                {
+                    ((DateTimePicker)(c)).Enabled = true;
+                }
+                if (c is Button)
+                {
+                    ((Button)(c)).Enabled = true;
+                }
+                if (c is KryptonButton)
+                {
+                    ((KryptonButton)(c)).Enabled = true;
+                }
+                if (c is TextBox)
+                {
+                    ((TextBox)(c)).Enabled = true;
+                }
+                if (c is MaskedTextBox)
+                {
+                    ((MaskedTextBox)(c)).Enabled = true;
+                }
+                if (c is DataGridView)
+                {
+                    ((DataGridView)(c)).Enabled = true;
+                }
+                if (c is ComboBox)
+                {
+                    ((ComboBox)(c)).Enabled = true;
+                }
+                if (c is RadioButton)
+                {
+                    ((RadioButton)(c)).Enabled = true;
+                }
+                if (c is CheckBox)
+                {
+                    ((CheckBox)(c)).Enabled = true;
+                }
+                if (c is TreeView)
+                {
+                    ((TreeView)c).Enabled = true;
+                    ((TreeView)c).BackColor = SystemColors.Window;
+                }
+                if (c is GroupBox)
+                {
+                    foreach (Control x in ((GroupBox)(c)).Controls)
+                    {
+                        if (x is DateTimePicker)
+                        {
+                            ((DateTimePicker)(x)).Enabled = true;
+                        }
+                        if (x is TextBox)
+                        {
+                            ((TextBox)(x)).Enabled = true;
+                        }
+                        if (x is MaskedTextBox)
+                        {
+                            ((MaskedTextBox)(x)).Enabled = true;
+                        }
+                        if (x is ComboBox)
+                        {
+                            ((ComboBox)(x)).Enabled = true;
+                        }
+                        if (x is RadioButton)
+                        {
+                            ((RadioButton)(x)).Enabled = true;
+                        }
+                        if (x is Button)
+                        {
+                            ((Button)(x)).Enabled = true;
+                        }
+                        if (x is KryptonButton)
+                        {
+                            ((KryptonButton)(x)).Enabled = true;
+                        }
+                        if (x is DataGridView)
+                        {
+                            ((DataGridView)(x)).Enabled = true;
+                        }
+                        if (x is CheckBox)
+                        {
+                            ((CheckBox)(x)).Enabled = true;
+                        }
+                    }
+                }
+                if (c is TabControl)
+                {
+                    foreach (Control x in ((TabControl)(c)).Controls)
+                    {
+                        if (x is TabPage)
+                        {
+                            foreach (Control y in ((TabPage)(x)).Controls)
+                            {
+                                if (y is CheckedListBox)
+                                {
+                                    ((CheckedListBox)(y)).Enabled = true;
+                                }
+                                if (y is RichTextBox)
+                                {
+                                    ((RichTextBox)(y)).Enabled = true;
+                                }
+                                if (y is DateTimePicker)
+                                {
+                                    ((DateTimePicker)(y)).Enabled = true;
+                                }
+                                if (y is Button)
+                                {
+                                    ((Button)(y)).Enabled = true;
+                                }
+                                if (y is KryptonButton)
+                                {
+                                    ((KryptonButton)(y)).Enabled = true;
+                                }
+                                if (y is TextBox)
+                                {
+                                    ((TextBox)(y)).Enabled = true;
+                                }
+                                if (y is MaskedTextBox)
+                                {
+                                    ((MaskedTextBox)(y)).Enabled = true;
+                                }
+                                if (y is DataGridView)
+                                {
+                                    ((DataGridView)(y)).Enabled = true;
+                                }
+                                if (y is ComboBox)
+                                {
+                                    ((ComboBox)(y)).Enabled = true;
+                                }
+                                if (y is RadioButton)
+                                {
+                                    ((RadioButton)(y)).Enabled = true;
+                                }
+                                if (y is TreeView)
+                                {
+                                    ((TreeView)y).Enabled = true;
+                                    ((TreeView)y).BackColor = SystemColors.ControlLight;
+                                }
+                                if (y is GroupBox)
+                                {
+                                    foreach (Control p in ((GroupBox)(y)).Controls)
+                                    {
+                                        if (p is DateTimePicker)
+                                        {
+                                            ((DateTimePicker)(p)).Enabled = true;
+                                        }
+                                        if (p is TextBox)
+                                        {
+                                            ((TextBox)(p)).Enabled = true;
+                                        }
+                                        if (p is MaskedTextBox)
+                                        {
+                                            ((MaskedTextBox)(p)).Enabled = true;
+                                        }
+                                        if (p is ComboBox)
+                                        {
+                                            ((ComboBox)(p)).Enabled = true;
+                                        }
+                                        if (p is RadioButton)
+                                        {
+                                            ((RadioButton)(p)).Enabled = true;
+                                        }
+                                        if (p is Button)
+                                        {
+                                            ((Button)(p)).Enabled = true;
+                                        }
+                                        if (p is KryptonButton)
+                                        {
+                                            ((KryptonButton)(p)).Enabled = true;
+                                        }
+                                        if (p is DataGridView)
+                                        {
+                                            ((DataGridView)(p)).Enabled = true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+                if (c is Panel)
+                {
+                    foreach (Control x in ((Panel)(c)).Controls)
+                    {
+                        if (x is CheckedListBox)
+                        {
+                            ((CheckedListBox)(x)).Enabled = true;
+                        }
+                        if (x is RichTextBox)
+                        {
+                            ((RichTextBox)(x)).Enabled = true;
+                        }
+                        if (x is DateTimePicker)
+                        {
+                            ((DateTimePicker)(x)).Enabled = true;
+                        }
+                        if (x is Button)
+                        {
+                            ((Button)(x)).Enabled = true;
+                        }
+                        if (x is KryptonButton)
+                        {
+                            ((KryptonButton)(x)).Enabled = true;
+                        }
+                        if (x is TextBox)
+                        {
+                            ((TextBox)(x)).Enabled = true;
+                        }
+                        if (x is MaskedTextBox)
+                        {
+                            ((MaskedTextBox)(x)).Enabled = true;
+                        }
+                        if (x is DataGridView)
+                        {
+                            ((DataGridView)(x)).Enabled = true;
+                        }
+                        if (x is ComboBox)
+                        {
+                            ((ComboBox)(x)).Enabled = true;
+                        }
+                        if (x is RadioButton)
+                        {
+                            ((RadioButton)(x)).Enabled = true;
+                        }
+                        if (x is TreeView)
+                        {
+                            ((TreeView)x).Enabled = true;
+                            ((TreeView)x).BackColor = SystemColors.ControlLight;
+                        }
+                        if (x is GroupBox)
+                        {
+                            foreach (Control p in ((GroupBox)(x)).Controls)
+                            {
+                                if (p is DateTimePicker)
+                                {
+                                    ((DateTimePicker)(p)).Enabled = true;
+                                }
+                                if (p is TextBox)
+                                {
+                                    ((TextBox)(p)).Enabled = true;
+                                }
+                                if (p is MaskedTextBox)
+                                {
+                                    ((MaskedTextBox)(p)).Enabled = true;
+                                }
+                                if (p is ComboBox)
+                                {
+                                    ((ComboBox)(p)).Enabled = true;
+                                }
+                                if (p is RadioButton)
+                                {
+                                    ((RadioButton)(p)).Enabled = true;
+                                }
+                                if (p is Button)
+                                {
+                                    ((Button)(p)).Enabled = true;
+                                }
+                                if (p is KryptonButton)
+                                {
+                                    ((KryptonButton)(p)).Enabled = true;
+                                }
+                                if (p is DataGridView)
+                                {
+                                    ((DataGridView)(p)).Enabled = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void PonteiroInicialMascara(object mask)
+        {
+            //faz o cast do tipo object para o tipo MaskedTextBox
+            MaskedTextBox m = mask as MaskedTextBox;
+            m.SelectionLength = 0;
+            m.SelectionStart = 0;
+        }
+
+        public static bool ConverterParaInt(object textbox)
+        {
+            int i = 0;
+            TextBox t = textbox as TextBox;
+
+            try
+            {
+                i = int.Parse(t.Text);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool ConverterParaFloat(object textbox)
+        {
+            float i = 0;
+            TextBox t = textbox as TextBox;
+
+            try
+            {
+                i = float.Parse(t.Text);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool PressionarEnterCampoTexto(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static void TrocarCorFundoBotao(object botao, Color cor)
+        {
+            Button b = botao as Button;
+            b.BackColor = cor;
+        }
+
+        public static void InformarConsultaVazia(object dataGridView)
+        {
+            DataGridView data = dataGridView as DataGridView;
+
+            if (data.Rows.Count < 1)
+            {
+                Mensagens.mensagemALERTA("Não foi encontrado nenhum registro com o valor informado ou não há nenhum registro cadastrado.");
+            }
+        }
+
+        public static string gerarDataEmString()
+        {
+            string data = "";
+
+            if (DateTime.Now.Day.ToString().Length > 1)
+            {
+                data = DateTime.Now.Day.ToString();
+            }
+            else
+            {
+                data = "0" + DateTime.Now.Day.ToString();
+            }
+
+            if (DateTime.Now.Month.ToString().Length > 1)
+            {
+                data += DateTime.Now.Month.ToString();
+            }
+            else
+            {
+                data += "0" + DateTime.Now.Month.ToString();
+            }
+
+            data += DateTime.Now.Year.ToString();
+
+            return data;
+        }
+
+        public static string formatarCNPJ(long cnpj)
+        {
+            return String.Format(@"{0:00\.000\.000\/0000\-00}", cnpj);
+        }
+
+        public static string formatarCPF(long cpf)
+        {
+            return String.Format(@"{0:000\.000\.000\-00}", cpf);
+        }
+
+        public static string adicionarZerosEsquerda(int valor, int qtd)
+        {
+            string num = "";
+            for (int i = 0; i < qtd; i++)
+            {
+                num += "0";
+            }
+            num += valor.ToString();
+
+            return num;
+        }
+
+        public static string mascaraTelefone(string tel)
+        {
+            if (tel.Length < 10)
+            {
+                return String.Format("({0}){1}-{2}", "00", tel.Substring(0, 4), tel.Substring(4));
+            }
+            else
+            {
+                return String.Format("({0}){1}-{2}", tel.Substring(0, 2), tel.Substring(2, 4), tel.Substring(6));
+            }
+        }
+
+        public static string mascaraPlaca(string placa)
+        {
+
+            return String.Format("{0}-{1}", placa.Substring(0, 3), placa.Substring(3));
+        }
+
+        public static string RemoveCaracteresEspeciais(string texto, bool aceitaEspaco, bool substituiAcentos)
+        {
+            string ret = texto;
+
+            if (string.IsNullOrEmpty(ret))
+                return ret;
+
+            if (substituiAcentos)
+                ret = RemoveAcentos(ret);
+
+            if (aceitaEspaco)
+                ret = System.Text.RegularExpressions.Regex.Replace(ret, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ\s]+?", string.Empty);
+            else
+                ret = System.Text.RegularExpressions.Regex.Replace(ret, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ]+?", string.Empty);
+
+            return ret;
+        }
+
+        public static string RemoveAcentos(string text)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < text.Length; i++)
+                sb.Append(s_Accents[text[i]]);
+
+            return sb.ToString();
+        }
+
+        private static readonly char[] s_Accents = GetAccents();
+        private static char[] GetAccents()
+        {
+            char[] accents = new char[256];
+
+            for (int i = 0; i < 256; i++)
+                accents[i] = (char)i;
+
+            accents[(byte)'á'] = accents[(byte)'à'] = accents[(byte)'ã'] = accents[(byte)'â'] = accents[(byte)'ä'] = 'a';
+            accents[(byte)'Á'] = accents[(byte)'À'] = accents[(byte)'Ã'] = accents[(byte)'Â'] = accents[(byte)'Ä'] = 'A';
+
+            accents[(byte)'é'] = accents[(byte)'è'] = accents[(byte)'ê'] = accents[(byte)'ë'] = 'e';
+            accents[(byte)'É'] = accents[(byte)'È'] = accents[(byte)'Ê'] = accents[(byte)'Ë'] = 'E';
+
+            accents[(byte)'í'] = accents[(byte)'ì'] = accents[(byte)'î'] = accents[(byte)'ï'] = 'i';
+            accents[(byte)'Í'] = accents[(byte)'Ì'] = accents[(byte)'Î'] = accents[(byte)'Ï'] = 'I';
+
+            accents[(byte)'ó'] = accents[(byte)'ò'] = accents[(byte)'ô'] = accents[(byte)'õ'] = accents[(byte)'ö'] = 'o';
+            accents[(byte)'Ó'] = accents[(byte)'Ò'] = accents[(byte)'Ô'] = accents[(byte)'Õ'] = accents[(byte)'Ö'] = 'O';
+
+            accents[(byte)'ú'] = accents[(byte)'ù'] = accents[(byte)'û'] = accents[(byte)'ü'] = 'u';
+            accents[(byte)'Ú'] = accents[(byte)'Ù'] = accents[(byte)'Û'] = accents[(byte)'Ü'] = 'U';
+
+            accents[(byte)'ç'] = 'c';
+            accents[(byte)'Ç'] = 'C';
+
+            accents[(byte)'ñ'] = 'n';
+            accents[(byte)'Ñ'] = 'N';
+
+            accents[(byte)'ÿ'] = accents[(byte)'ý'] = 'y';
+            accents[(byte)'Ý'] = 'Y';
+
+            return accents;
+        }
+
+        public static String FormatarParaValorEmReais(float valor)
+        {
+            return valor.ToString("#,0.00",
+                  CultureInfo.CurrentCulture);
+        }
+
+        public static String FormatarParaValorComCifrao(float valor)
+        {
+            return String.Format("{0:C}", valor);
+        }
+
+        public static string converterParaValor(string texto)
+        {
+
+            if (!string.IsNullOrEmpty(texto))
+            {
+                try
+                {
+                    float valor = float.Parse(texto);
+                    return FormatarParaValorEmReais(valor);
+                }
+                catch
+                {
+                    throw new ServiceException("Informe valores válidos no campo.");
+                    return "0,00";
+                }
+            }
+            return "0,00";
+        }
+
+        public static List<String> recuperarListaEstados(){
+
+            List<String> estados = new List<String>();
+
+            estados.Add("AC");
+            estados.Add("AL");
+            estados.Add("AP");
+            estados.Add("AM");
+            estados.Add("BA");
+            estados.Add("CE");
+            estados.Add("DF");
+            estados.Add("ES");
+            estados.Add("GO");
+            estados.Add("MA");
+            estados.Add("MT");
+            estados.Add("MS");
+            estados.Add("MG");
+            estados.Add("PA");
+            estados.Add("PB");
+            estados.Add("PR");
+            estados.Add("PE");
+            estados.Add("PI");
+            estados.Add("RJ");
+            estados.Add("RN");
+            estados.Add("RS");
+            estados.Add("RO");
+            estados.Add("RR");
+            estados.Add("SC");
+            estados.Add("SP");
+            estados.Add("SE");
+            estados.Add("TO");
+
+            return estados;
+
+       }
+
+        public static List<String> recuperarListaTiposTel()
+        {
+
+            List<String> estados = new List<String>();
+
+            estados.Add("Comercial");
+            estados.Add("Celular");
+            estados.Add("Residencial");
+            
+            return estados;
+
+        }
+
+        public static List<String> recuperarListaStatus()
+        {
+
+            List<String> status = new List<String>();
+
+            status.Add("Ativo");
+            status.Add("Inativo");
+
+            return status;
+
+        }
+
+        public static List<String> recuperarDiasSemana()
+        {
+
+            List<String> dias = new List<String>();
+
+            dias.Add("Segunda");
+            dias.Add("Terca");
+            dias.Add("Quarta");
+            dias.Add("Quinta");
+            dias.Add("Sexta");
+            dias.Add("Sabado");
+            dias.Add("Domingo");
+
+            return dias;
+
+        }
+
+        public static List<String> recuperarHorarios()
+        {
+
+            List<String> horarios = new List<String>();
+
+            horarios.Add("Manhã");
+            horarios.Add("Tarde");
+            horarios.Add("Noite");
+
+            return horarios;
+
+        }
+        public static List<String> recuperarStatus()
+        {
+
+            List<String> status = new List<String>();
+
+            status.Add("Ativo");
+            status.Add("Inativo");
+
+            return status;
+
+        }
+
+        public static List<String> recuperarMeses()
+        {
+
+            List<String> status = new List<String>();
+
+            status.Add("Janeiro");
+            status.Add("Fevereiro");
+            status.Add("Março");
+            status.Add("Abril");
+            status.Add("Maio");
+            status.Add("Junho");
+            status.Add("Julho");
+            status.Add("Agosto");
+            status.Add("Setembro");
+            status.Add("Outubro");
+            status.Add("Novembro");
+            status.Add("Dezembro");
+
+            return status;
+
+        }
+        public static int NumeroMes(string mes)
+        {
+            switch (mes)
+            {
+                case "Janeiro":
+                    return 1;
+                case "Fevereiro":
+                    return 2;
+                case "Março":
+                    return 3;
+                case "Abril":
+                    return 4;
+                case "Maio":
+                    return 5;
+                case "Junho":
+                    return 6;
+                case "Julho":
+                    return 7;
+                case "Agosto":
+                    return 8;
+                case "Setembro":
+                    return 9;
+                case "Outubro":
+                    return 10;
+                case "Novembro":
+                    return 11;
+                case "Dezembro":
+                    return 12;
+            }
+
+            return 0;
+        }
+        public static List<String> recuperarIsento()
+        {
+
+            List<String> isentos = new List<String>();
+
+            isentos.Add("Sim");
+            isentos.Add("Não");
+
+            return isentos;
+
+        }
+    }
+}

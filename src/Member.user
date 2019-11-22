@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ProjectFiles</ProjectView>
+    <PublishUrlHistory>ftp://x5infbr%40ftp.x5.inf.br/public_html/update/cashinbox/|\\sdc01\X5 - Programas\CashInBox - Sistema de Restaurante\Externo\|\\192.168.1.1\X5 - Programas\CashInBox - Sistema de Restaurante\Interno\|\\sdc01\X5 - Programas\CashInBox - Sistema de Restaurante\Interno\|U:\CashInBox - Sistema de Restaurante\Interno\</PublishUrlHistory>
+    <InstallUrlHistory>http://x5.inf.br/update/cashinbox/|\\192.168.1.2\X5 - Programas\CashInBox - Sistema de Restaurante\Interno\</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory>\\sdc01\X5 - Programas\CashInBox - Sistema de Restaurante\Interno\|\\sdc01\CashInBox - Sistema de Restaurante\Interno\</UpdateUrlHistory>
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+</Project>
