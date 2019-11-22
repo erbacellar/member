@@ -232,7 +232,7 @@ namespace CashInBox
             }
         }
 
-        private void btNovo_Click(object sender, EventArgs e)
+        private async void btNovo_Click(object sender, EventArgs e)
         {
             Utils.LimparCampos(this);
             Utils.Habilitar(this);
@@ -243,9 +243,10 @@ namespace CashInBox
             mskDataIsentoFin.Enabled = false;
             cboStatus.SelectedIndex = 0;
 
-            if (MembroDAO.ObterUltimoMembroId() != null)
+            var lastId = await MembroDAO.ObterUltimoMembroId();
+            if (lastId.HasValue)
             {
-                txtNum.Text = "" + (MembroDAO.ObterUltimoMembroId() + 1);
+                txtNum.Text = "" + (lastId.Value + 1);
             }
             else
             {
@@ -341,12 +342,12 @@ namespace CashInBox
             return erros;
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private async void btnSalvar_Click(object sender, EventArgs e)
         {
             String erros = null;
             String tipoSalvar = null;
             Membro membro = new Membro();
-
+            membro.Key = txtKey.Text;
             if (txtCodigo.Text.Equals(""))
             {
                 membro.Id = 0;
@@ -364,11 +365,11 @@ namespace CashInBox
                 {
 
                     membro.Cpf = mskCPF.Text;
-
-                    if (MembroDAO.ProcurarMembroPorCpf(membro) == null)
+                    var membroJaExiste = await MembroDAO.ProcurarMembroPorCpf(membro);
+                    if (membroJaExiste == null)
                     {
                         tipoSalvar = "i";
-                        IncluirAtualizarCadastro(tipoSalvar, membro.Id);
+                        IncluirAtualizarCadastro(tipoSalvar, membro.Key);
                     }
                     else
                     {
@@ -381,7 +382,7 @@ namespace CashInBox
                 else
                 {
                     tipoSalvar = "a";
-                    IncluirAtualizarCadastro(tipoSalvar, membro.Id);
+                    IncluirAtualizarCadastro(tipoSalvar, membro.Key);
                 }
             }
             else
@@ -392,14 +393,14 @@ namespace CashInBox
 
         }
 
-        public void IncluirAtualizarCadastro(String x, int id)
+        public async void IncluirAtualizarCadastro(String x, string key)
         {
             Membro member = new Membro();
 
-            member.Id = id;
+            member.Key = key;
             if (x.Equals("a"))
             {
-                member = MembroDAO.Obter(id);
+                member = await MembroDAO.Obter(key);
             }
             member.DataEntrada = dtpDataEntrada.Value;
             member.DataSaida = dtpDataSaida.Value;
@@ -456,7 +457,7 @@ namespace CashInBox
 
             if (x.Equals("i"))
             {
-                if (MembroDAO.Incluir(member))
+                if (await MembroDAO.Incluir(member))
                 {
                     Mensagens.mensagemINFO_INCLUIR();
                     if (Mensagens.mensagemPERGUNTA_INCLUIR())
@@ -479,7 +480,7 @@ namespace CashInBox
             }
             if (x.Equals("a"))
             {
-                if (MembroDAO.Alterar(member))
+                if (await MembroDAO.Alterar(member))
                 {
                     Mensagens.mensagemINFO_ALTERAR();
                     EstadoInicial();

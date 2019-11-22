@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using CashInBox.Class_Access_DataBase;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Firebase.Database.Query;
 
 namespace CashInBox
 {
     class MembroDAO
     {
+        const string database = "Membros";
+
         //Metodo que inclui um Membro no banco
-        public static bool Incluir(Membro Membro)
+        public static async Task<bool> Incluir(Membro membro)
         {
-            Entities db = SingletonObjectContext.Instance.Context;
+            var client = FirebaseContext.Instance;
             try
             {
-                db.Membros.Add(Membro);
-                db.SaveChanges();
+                membro.Id = Convert.ToInt32(membro.Numero);
+                var result = await client.Child(database).PostAsync(JsonConvert.SerializeObject(membro));
+                membro.Key = result.Key;
+                Alterar(membro);
                 return true;
             }
             catch
@@ -26,73 +34,12 @@ namespace CashInBox
         }
 
         //Metodo que altera dados de um Membro do banco
-        public static bool Alterar(Membro Membro)
+        public static async Task<bool> Alterar(Membro membro)
         {
-            Entities db = SingletonObjectContext.Instance.Context;
+            var client = FirebaseContext.Instance;
             try
             {
-                int codigo = Membro.Id;
-                Membro m = db.Membros.First(x => x.Id == codigo);
-                m.Cpf = Membro.Cpf;
-                m.DataEntrada = Membro.DataEntrada;
-                m.DataNascimento = Membro.DataNascimento;
-                m.DataSaida = Membro.DataSaida;
-
-                m.Cep = Membro.Cep;
-                m.Logradouro = Membro.Logradouro;
-                m.NumEnd = Membro.NumEnd;
-                m.Bairro = Membro.Bairro;
-                m.Complemento = Membro.Complemento;
-                m.Cidade = Membro.Cidade;
-                m.Estado = Membro.Estado;
-
-                m.Status = Membro.Status;
-                m.Isento = Membro.Isento;
-
-                if (Membro.DataIsentoIni != null)
-                {
-                    m.DataIsentoIni = Membro.DataIsentoIni;
-                }
-
-                if (Membro.DataIsentoFin != null)
-                {
-                    m.DataIsentoFin = Membro.DataIsentoFin;
-                }
-
-                m.Numero = Membro.Numero;
-                m.Nome = Membro.Nome;
-                m.Rg = Membro.Rg;
-                m.GrupoDia = Membro.GrupoDia;
-                m.GrupoHorario = Membro.GrupoHorario;
-
-                m.Telefone1 = Membro.Telefone1;
-                m.Telefone2 = Membro.Telefone2;
-                m.Telefone3 = Membro.Telefone3;
-                m.Telefone4 = Membro.Telefone4;
-                m.Email = Membro.Email;
-
-                m.Espirita = Membro.Espirita;
-                m.ConheceEspiritismoKardecista = Membro.ConheceEspiritismoKardecista;
-                m.FezCurso = Membro.FezCurso;
-                m.CursoPbde = Membro.CursoPbde;
-                m.CursoEsde = Membro.CursoEsde;
-                m.CursoCoem = Membro.CursoCoem;
-                m.CursoOutros = Membro.CursoOutros;
-                m.AondeCursou = Membro.AondeCursou;
-                m.JaLeuLivrosEspiritas = Membro.JaLeuLivrosEspiritas;
-                m.QuaisLivros = Membro.QuaisLivros;
-                m.GostariaTrabalhoVoluntario = Membro.GostariaTrabalhoVoluntario;
-                m.DistribuicaoAlimento = Membro.DistribuicaoAlimento;
-                m.DistribuicaoAgasalho = Membro.DistribuicaoAgasalho;
-                m.OracaoPasseDomicilio = Membro.OracaoPasseDomicilio;
-                m.Passes = Membro.Passes;
-                m.Palestras = Membro.Palestras;
-                m.Biblioteca = Membro.Biblioteca;
-                m.AtendimentoFraterno = Membro.AtendimentoFraterno;
-                m.VisitaMensalAsilo = Membro.VisitaMensalAsilo;
-                m.PasseDomingo = Membro.PasseDomingo;
-
-                db.SaveChanges();
+                await client.Child(database).Child(membro.Key).PutAsync(membro);
                 return true;
             }
             catch
@@ -102,13 +49,12 @@ namespace CashInBox
         }
 
         //Metodo que exclui um Membro do banco
-        public static bool Excluir(Membro Membro)
+        public static async Task<bool> Excluir(Membro membro)
         {
-            Entities db = SingletonObjectContext.Instance.Context;
+            var client = FirebaseContext.Instance;
             try
             {
-                db.Membros.Remove(Membro);
-                db.SaveChanges();
+                await client.Child(database).Child(membro.Key).DeleteAsync();
                 return true;
             }
             catch
@@ -118,19 +64,21 @@ namespace CashInBox
         }
 
         //Metodo que retorna todos os Membros cadastrados do banco
-        public static IOrderedEnumerable<Membro> ObterMembros()
+        public static async Task<IOrderedEnumerable<Membro>> ObterMembros()
         {
-            Entities db = new Entities();
-            return db.Membros.ToList().OrderBy(x => x.Nome);
+            var membros = await Listar();
+            return ((IEnumerable<Membro>)membros).ToList().OrderBy(x => x.Nome);
         }
 
         //Metodo que procura um Membro pelo ID
-        public static Membro Obter(int id)
+        public static async Task<Membro> Obter(string key)
         {
-            Entities db = new Entities();
+            var client = FirebaseContext.Instance;
+
             try
             {
-                return db.Membros.FirstOrDefault(x => x.Id == id);
+                var result = await client.Child(database).Child(key).OnceSingleAsync<Membro>();
+                return result;
             }
             catch
             {
@@ -138,12 +86,12 @@ namespace CashInBox
             }
         }
 
-        public static int ObterUltimoMembroId()
-        {
-            Entities db = new Entities();
+        public static async Task<int?> ObterUltimoMembroId()
+        {            
             try
             {
-                return db.Membros.AsEnumerable().LastOrDefault().Id;
+                var membros = await Listar();
+                return membros.LastOrDefault()?.Id;
             }
             catch
             {
@@ -151,27 +99,27 @@ namespace CashInBox
             }
         }
 
-        //Metodo que procura um Membro por nome
-        public static Membro Obter(string nome)
-        {
-            Entities db = new Entities();
-            try
-            {
-                return db.Membros.FirstOrDefault(x => x.Nome.Equals(nome));
-            }
-            catch
-            {
-                return null;
-            }
-        }
+        ////Metodo que procura um Membro por nome
+        //public static Membro Obter(string nome)
+        //{
+        //    Entities db = new Entities();
+        //    try
+        //    {
+        //        return db.Membros.FirstOrDefault(x => x.Nome.Equals(nome));
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //}
 
         //Metodo que procura um Membro por CPF
-        public static Membro ProcurarMembroPorCpf(Membro Membro)
+        public static async Task<Membro> ProcurarMembroPorCpf(Membro Membro)
         {
-            Entities db = new Entities();
             try
             {
-                return db.Membros.FirstOrDefault(x => x.Cpf.Equals(Membro.Cpf));
+                var membros = await Listar();
+                return membros.FirstOrDefault(x => x.Cpf.Equals(Membro.Cpf));
             }
             catch
             {
@@ -180,13 +128,13 @@ namespace CashInBox
         }
 
         //Metodo que retorna lista de Membros em ordem alfabética, por letra parcialmente inserida.Ex.:Insere "a", retorna:"Maria, Joana..."
-        public static IOrderedEnumerable<Membro> ObterMembrosPorLetraParcial(Membro Membro)
-        {
-            Entities db = new Entities();
+        public static async Task<IOrderedEnumerable<Membro>> ObterMembrosPorLetraParcial(Membro Membro)
+        {            
             try
             {
-                return db.Membros
-                    .Where(x => x.Nome.Contains(Membro.Nome) || x.Cpf.Contains(Membro.Cpf)).ToList().OrderBy(x => x.Nome);
+                var membros = await Listar();
+                return membros
+                    .Where(x => x.Nome.ToLower().Contains(Membro.Nome.ToLower()) || x.Cpf.Contains(Membro.Cpf)).ToList().OrderBy(x => x.Nome);
             }
             catch
             {
@@ -194,12 +142,12 @@ namespace CashInBox
             }
         }
 
-        public static IOrderedEnumerable<Membro> ObterMembrosPorVoluntarios()
-        {
-            Entities db = new Entities();
+        public static async Task<IOrderedEnumerable<Membro>> ObterMembrosPorVoluntarios()
+        {            
             try
             {
-                return db.Membros
+                var membros = await Listar();
+                return membros
                     .Where(x => x.GostariaTrabalhoVoluntario == true && 
                     (x.DistribuicaoAlimento || 
                     x.DistribuicaoAgasalho || 
@@ -230,6 +178,20 @@ namespace CashInBox
                              Peso = p.Peso
                          };
             return result;
+        }
+
+        public static async Task<List<Membro>> Listar()
+        {
+            var client = FirebaseContext.Instance;
+            var results = await client.Child(database).OnceAsync<Membro>();
+
+            var membros = new List<Membro>();
+            foreach (var item in results)
+            {
+                membros.Add(item.Object);
+            }
+
+            return membros;
         }
     }
 }

@@ -123,6 +123,7 @@
             this.lblIntervaloIsento = new System.Windows.Forms.Label();
             this.mskDataIsentoFin = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtKey = new System.Windows.Forms.TextBox();
             this.panMenu.SuspendLayout();
             this.grpEspirita.SuspendLayout();
             this.grpConheceEspiritismoKardecista.SuspendLayout();
@@ -724,6 +725,14 @@
             this.lblDataSaida.TabIndex = 169;
             this.lblDataSaida.Text = "Data de Saída";
             // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.TabIndex = 0;
+            this.shapeContainer2.TabStop = false;
+            // 
             // lblDataNascimento
             // 
             this.lblDataNascimento.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1165,6 +1174,7 @@
             this.txtNum.Location = new System.Drawing.Point(28, 99);
             this.txtNum.MaxLength = 50;
             this.txtNum.Name = "txtNum";
+            this.txtNum.ReadOnly = true;
             this.txtNum.Size = new System.Drawing.Size(74, 21);
             this.txtNum.TabIndex = 0;
             this.txtNum.Enter += new System.EventHandler(this.FocusInTextMask);
@@ -1469,12 +1479,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data de Isenção";
             // 
+            // txtKey
+            // 
+            this.txtKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtKey.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKey.Location = new System.Drawing.Point(113, 66);
+            this.txtKey.Name = "txtKey";
+            this.txtKey.ReadOnly = true;
+            this.txtKey.Size = new System.Drawing.Size(25, 21);
+            this.txtKey.TabIndex = 234;
+            this.txtKey.TabStop = false;
+            this.txtKey.Visible = false;
+            // 
             // frmMembro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(967, 572);
+            this.Controls.Add(this.txtKey);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cboIsento);
             this.Controls.Add(this.lblIsento);
@@ -1669,5 +1692,6 @@
         private System.Windows.Forms.Label lblIntervaloIsento;
         public System.Windows.Forms.MaskedTextBox mskDataIsentoFin;
         private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox txtKey;
     }
 }

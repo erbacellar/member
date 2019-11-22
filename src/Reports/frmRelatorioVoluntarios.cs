@@ -17,9 +17,10 @@ namespace CashInBox
             InitializeComponent();
         }
 
-        private void frmRelatorioVoluntarios_Load(object sender, EventArgs e)
+        private async void frmRelatorioVoluntarios_Load(object sender, EventArgs e)
         {
-            foreach (Membro member in MembroDAO.ObterMembrosPorVoluntarios())
+            var membrosVoluntarios = await MembroDAO.ObterMembrosPorVoluntarios();
+            foreach (Membro member in membrosVoluntarios)
             {
                 dsVoluntarios.Voluntarios.AddVoluntariosRow(member.Nome, AcoesSociais(member));
             }

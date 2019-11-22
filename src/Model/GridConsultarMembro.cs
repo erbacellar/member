@@ -7,7 +7,7 @@ namespace CashInBox
 {
     class GridConsultarMembro
     {
-        public int Id { set; get; }
+        public string Id { set; get; }
         public string Nome { set; get; }
         public string Cpf { set; get; }
         public string Numero { get; set; }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace CashInBox
 {
@@ -36,7 +37,7 @@ namespace CashInBox
 
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private async void btnPesquisar_Click(object sender, EventArgs e)
         {
             grdConsulta.Rows.Clear();
 
@@ -48,12 +49,8 @@ namespace CashInBox
 
             status = cboStatus.SelectedItem.ToString();
 
-            BackgroundWorker backgroundWorker = new BackgroundWorker();
-            backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
-            backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker_RunWorkerCompleted);
-            backgroundWorker.RunWorkerAsync();
-            _progresso = new ProgressoPesquisa();
-            _progresso.ShowDialog();
+            
+            await Pesquisar();
 
             try
             {
@@ -66,7 +63,7 @@ namespace CashInBox
 
         }
 
-        private void grdConsulta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void grdConsulta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (frmMembro != null)
             {
@@ -75,7 +72,7 @@ namespace CashInBox
                     Utils.LimparCampos(frmMembro);
 
                     Membro memb = new Membro();
-                    memb = MembroDAO.Obter(int.Parse(grdConsulta.CurrentRow.Cells[0].Value.ToString()));
+                    memb = await MembroDAO.Obter(grdConsulta.CurrentRow.Cells[0].Value.ToString());
 
                     frmMembro.IndexAtual = membrosConsult.FindIndex(x => x.Id == memb.Id);
                     frmMembro.IndexFinal = membrosConsult.Count() - 1;
@@ -85,6 +82,7 @@ namespace CashInBox
                     HabilitarConsultaRapida(frmMembro);
 
                     frmMembro.txtCodigo.Text = memb.Id.ToString();
+                    frmMembro.txtKey.Text = memb.Key;
                     frmMembro.txtNum.Text = memb.Numero;
                     frmMembro.dtpDataEntrada.Value = memb.DataEntrada;
                     frmMembro.dtpDataSaida.Value = memb.DataSaida;
@@ -255,7 +253,7 @@ namespace CashInBox
                         Utils.LimparCampos(frmRelFichaCadMembro);
 
                         Membro memb = new Membro();
-                        memb = MembroDAO.Obter(int.Parse(grdConsulta.CurrentRow.Cells[0].Value.ToString()));
+                        memb = await MembroDAO.Obter(grdConsulta.CurrentRow.Cells[0].Value.ToString());
 
                         frmRelFichaCadMembro.txtId.Text = memb.Id.ToString();
                         frmRelFichaCadMembro.txtNome.Text = memb.Nome;
@@ -281,21 +279,18 @@ namespace CashInBox
             }
         }
 
-        #region Eventos do BackgroundWorker
-        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        private async Task Pesquisar()
         {
+            _progresso = new ProgressoPesquisa();
+            _progresso.Show();
+
             grids = new List<GridConsultarMembro>();
             IOrderedEnumerable<Membro> membros;
             IOrderedEnumerable<Membro> membrosAux;
 
             if (txtConsultar.Text.Equals(""))
             {
-                membros = MembroDAO.ObterMembros();
-
-                //foreach (Membro x in MembroDAO.ObterMembros())
-                //{
-                //    grids.Add(preencherVariavel(x));
-                //}
+                membros = await MembroDAO.ObterMembros();
             }
             else
             {
@@ -303,12 +298,7 @@ namespace CashInBox
                 membConsulta.Nome = txtConsultar.Text;
                 membConsulta.Cpf = txtConsultar.Text;
 
-                membros = MembroDAO.ObterMembrosPorLetraParcial(membConsulta);
-
-                //foreach (Membro x in MembroDAO.ObterMembrosPorLetraParcial(membConsulta))
-                //{
-                //    grids.Add(preencherVariavel(x));
-                //}
+                membros = await MembroDAO.ObterMembrosPorLetraParcial(membConsulta);
             }
 
             membrosAux = membros.Where(x => x.Status != null && x.Status.Equals(status)).OrderBy(x => x.Nome);
@@ -375,6 +365,8 @@ namespace CashInBox
 
             membrosConsult = membros.ToList();
 
+            _progresso.Close();
+
             BindingSource source = new BindingSource();
             source.DataSource = grids;
             SetControlPropertyValue(grdConsulta, "DataSource", source);
@@ -382,13 +374,6 @@ namespace CashInBox
             Utils.InformarConsultaVazia(grdConsulta);
 
         }
-
-        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            _progresso.Close();
-
-        }
-        #endregion Eventos do BackgroundWorker
 
         delegate void SetControlValueCallback(Control oControl, string propName, object propValue);
         private void SetControlPropertyValue(Control oControl, string propName, object propValue)
@@ -415,7 +400,7 @@ namespace CashInBox
         private GridConsultarMembro preencherVariavel(Membro x)
         {
             GridConsultarMembro grid = new GridConsultarMembro();
-            grid.Id = x.Id;
+            grid.Id = x.Key;
             grid.Numero = x.Numero;
             grid.Nome = x.Nome;
             grid.Cpf = x.Cpf;

@@ -7,6 +7,7 @@ namespace CashInBox
 {
     public class Membro
     {
+        public string Key { get; set; }
         public int Id { set; get; }
         public String Numero { set; get;}
         public String GrupoDia { set; get;}

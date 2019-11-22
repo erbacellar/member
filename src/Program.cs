@@ -16,16 +16,16 @@ namespace CashInBox
         static void Main()
         {
 
-            Process aProcess = Process.GetCurrentProcess();
-            string aProcName = aProcess.ProcessName;
+            //Process aProcess = Process.GetCurrentProcess();
+            //string aProcName = aProcess.ProcessName;
 
-            if (Process.GetProcessesByName(aProcName).Length > 1)
-            {
-                MessageBox.Show("A aplicação já está executando!!", "Execução", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                Application.ExitThread();
-            }
+            //if (Process.GetProcessesByName(aProcName).Length > 1)
+            //{
+            //    MessageBox.Show("A aplicação já está executando!!", "Execução", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            //    Application.ExitThread();
+            //}
 
-            int renderizacao = 0;
+            //int renderizacao = 0;
 
             bool deslogar = false;
             //bool licencaValida = false;
@@ -33,14 +33,14 @@ namespace CashInBox
 
             //Habilita o Estilo Visual das janelas
             Application.EnableVisualStyles();
-            if (renderizacao == 0)
-            {
-                //Renderiza corretamente os componentes na janela
-                //OBS: So precisa ser chamado na primeira chamada de janela, após isso não
-                //por isso o IF.
-                Application.SetCompatibleTextRenderingDefault(false);
-                renderizacao = 1;
-            }
+            //if (renderizacao == 0)
+            //{
+            //    //Renderiza corretamente os componentes na janela
+            //    //OBS: So precisa ser chamado na primeira chamada de janela, após isso não
+            //    //por isso o IF.
+            //    Application.SetCompatibleTextRenderingDefault(false);
+            //    renderizacao = 1;
+            //}
             try
             {
                 //frmSelecionarTipoAcesso selecTipAcess = new frmSelecionarTipoAcesso();

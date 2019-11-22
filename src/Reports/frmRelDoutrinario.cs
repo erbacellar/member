@@ -17,9 +17,10 @@ namespace CashInBox
             InitializeComponent();
         }
 
-        private void frmRelDoutrinario_Load(object sender, EventArgs e)
+        private async void frmRelDoutrinario_Load(object sender, EventArgs e)
         {
-            pgbLoad.Maximum = MembroDAO.ObterMembros().Count();
+            var membros = await MembroDAO.ObterMembros();
+            pgbLoad.Maximum = membros.Count();
 
             foreach (MembroPeso member in MembroDAO.GetMembrosPesoGrupo())
             {
