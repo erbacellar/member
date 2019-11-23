@@ -21,8 +21,9 @@ namespace CashInBox
         {
             var membros = await MembroDAO.ObterMembros();
             pgbLoad.Maximum = membros.Count();
+            var membrosPorPeso = await MembroDAO.GetMembrosPesoGrupo();
 
-            foreach (MembroPeso member in MembroDAO.GetMembrosPesoGrupo())
+            foreach (MembroPeso member in membrosPorPeso)
             {
                 string fezCurso = "";
                 string cursos = "";

@@ -1,37 +1,46 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using CashInBox.Enums;
+using CashInBox.Extensions;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CashInBox
 {
     public partial class frmRelatorioAniversariantes : Form
     {
+        private List<Membro> membros;
         public frmRelatorioAniversariantes()
         {
             InitializeComponent();
         }
 
-        private void frmRelatorioMembrosPorGrupo_Load(object sender, EventArgs e)
+        private async void frmRelatorioMembrosPorGrupo_Load(object sender, EventArgs e)
         {
-            foreach(string x in Utils.recuperarMeses())
-            {
+            foreach (string x in Utils.recuperarMeses())
                 cboMes.Items.Add(x);
-            }
-            
 
             cboMes.SelectedIndex = 0;
+            membros = await MembroDAO.Listar();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            this.AniversariantesTableAdapter.Fill(this.dsAniversariantes.Aniversariantes, Utils.NumeroMes(cboMes.SelectedItem.ToString()));
+            var mesSelecionado = cboMes.SelectedItem.ToString();
+            var mes = Utils.NumeroMes(mesSelecionado);
+
+            var aniversariantes = membros
+                .Where(x => x.DataNascimento.Month == mes && x.Status == EnumHelper.GetDescription(StatusType.ATIVO))
+                .OrderBy(x => x.DataNascimento.Day)
+                .ToList();
+
+            if (!aniversariantes.Any())
+                dsAniversariantes.Aniversariantes.Clear();
+            else
+                foreach (var aniversariante in aniversariantes)
+                    dsAniversariantes.Aniversariantes.AddAniversariantesRow(aniversariante.DataNascimento, aniversariante.Nome, aniversariante.Email, mesSelecionado);
 
             ReportParameter[] parameters = new ReportParameter[1];
             parameters[0] = new ReportParameter("mes", cboMes.SelectedItem.ToString());

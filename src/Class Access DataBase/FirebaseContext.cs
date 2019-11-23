@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Firebase.Database;
 using System.Threading.Tasks;
-using Firebase.Database;
-using FireSharp.Response;
 
 namespace CashInBox.Class_Access_DataBase
 {

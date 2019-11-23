@@ -35,11 +35,22 @@ namespace CashInBox.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ERNANE-NOTEBOOK\\SQLEXPRESS;Initial Catalog=Member;Persist Security In" +
-            "fo=True;User ID=sa;Password=ernane92")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-3QQEO96\\\\SQLEXPRESS;Initial Catalog=Member;Persist Security I" +
+            "nfo=True;User ID=member-user;Password=#Matheus190504")]
         public string MemberConnectionString {
             get {
                 return ((string)(this["MemberConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-3QQEO96\\SQLEXPRESS;Initial Catalog=Member;Persist Security In" +
+            "fo=True;User ID=member-user;Password=#Matheus190504")]
+        public string MemberConnectionString1 {
+            get {
+                return ((string)(this["MemberConnectionString1"]));
             }
         }
     }

@@ -7,6 +7,7 @@ using CashInBox.Class_Access_DataBase;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Firebase.Database.Query;
+using CashInBox.DAO;
 
 namespace CashInBox
 {
@@ -166,17 +167,30 @@ namespace CashInBox
             }
         }
 
-        public static IQueryable<MembroPeso> GetMembrosPesoGrupo()
+        public static async Task<IQueryable<MembroPeso>> GetMembrosPesoGrupo()
         {
-            var db = new Entities();
-            var result = from m in db.Membros
-                         join p in db.PesoGrupos on m.GrupoDia + m.GrupoHorario equals p.DiaHorario
+            var client = FirebaseContext.Instance;
+            var membros = await Listar();
+            var pesos = await PesoGruposDAO.Listar();
+
+            var result = from m in membros.AsQueryable()
+                         join p in pesos.AsQueryable() on m.GrupoDia + m.GrupoHorario equals p.DiaHorario
                          orderby p.Peso
                          select new MembroPeso()
                          {
                              Membro = m,
                              Peso = p.Peso
                          };
+            return result;
+        }
+
+        public static async Task<List<Membro>> MembrosPorDiaHorario(string dia, string horario)
+        {
+            var client = FirebaseContext.Instance;
+            var membros = await Listar();
+
+            var result = membros.Where(x => x.GrupoDia == dia && x.GrupoHorario == horario).OrderBy(x => x.Nome).ToList();
+
             return result;
         }
 

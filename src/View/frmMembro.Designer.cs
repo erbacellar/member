@@ -224,7 +224,7 @@
             this.mskCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskCep.Click += new System.EventHandler(this.PonteiroInicialMascara);
             this.mskCep.Enter += new System.EventHandler(this.FocusInTextMask);
-            this.mskCep.Leave += new System.EventHandler(this.FocusOutTextMask);
+            this.mskCep.Leave += new System.EventHandler(this.MskCep_Leave);
             // 
             // mskCPF
             // 

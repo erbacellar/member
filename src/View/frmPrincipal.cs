@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Deployment.Application;
 using System.Threading;
 using ComponentFactory.Krypton.Toolkit;
+using CashInBox.DAO;
 
 namespace CashInBox
 {
@@ -83,7 +84,7 @@ namespace CashInBox
             f.ShowDialog();
         }
 
-        private void frmPrincipalTeste_Load(object sender, EventArgs e)
+        private async void frmPrincipalTeste_Load(object sender, EventArgs e)
         {
             Versao v = new Versao();
             lblVersao.Text = "Versão: " + v.Obter();

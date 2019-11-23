@@ -1,0 +1,40 @@
+## dsAniversariantes ##
+SELECT        Id, DataNascimento, Nome, Email
+FROM            Membros
+WHERE        (MONTH(DataNascimento) = @Mes) AND (Status = 'Ativo')
+ORDER BY DAY(DataNascimento)
+
+## PesoGrupo ##
+SELECT Nome, GrupoDia, GrupoHorario, Id FROM Membros WHERE (GrupoDia = @GrupoDia) AND (GrupoHorario = @GrupoHorario) and Status = 'Ativo' order by Nome
+
+## Biblioteca ##
+SELECT        Membros.Nome, Membros.Cpf, Membros.Rg, Membros.GrupoDia, Membros.GrupoHorario, Membros.Cep, Membros.Logradouro, Membros.Bairro, Membros.Cidade, Membros.Estado, Membros.NumEnd, 
+                         Membros.Telefone1, Membros.Telefone2, Membros.Telefone3, Membros.Telefone4, PesoGrupos.Peso
+FROM            Membros INNER JOIN
+                         PesoGrupos ON Membros.GrupoDia + Membros.GrupoHorario = PesoGrupos.DiaHorario
+WHERE        (Membros.Isento = 0)
+ORDER BY PesoGrupos.Peso
+
+## Divulgacao ##
+SELECT        Membros.Nome, Membros.Cpf, Membros.Rg, Membros.GrupoDia, Membros.GrupoHorario, Membros.Cep, Membros.Logradouro, Membros.Bairro, Membros.Cidade, Membros.Estado, Membros.NumEnd, 
+                         Membros.Telefone1, Membros.Telefone2, Membros.Telefone3, Membros.Telefone4, PesoGrupos.Peso
+FROM            Membros INNER JOIN
+                         PesoGrupos ON Membros.GrupoDia + Membros.GrupoHorario = PesoGrupos.DiaHorario
+WHERE        (Membros.Isento = 0)
+ORDER BY PesoGrupos.Peso
+
+## Financeiro ##
+SELECT        Membros.Nome, Membros.Cpf, Membros.Rg, Membros.GrupoDia, Membros.GrupoHorario, Membros.Cep, Membros.Logradouro, Membros.Bairro, Membros.Cidade, Membros.Estado, Membros.NumEnd, 
+                         PesoGrupos.Peso
+FROM            Membros INNER JOIN
+                         PesoGrupos ON Membros.GrupoDia + Membros.GrupoHorario = PesoGrupos.DiaHorario
+WHERE        (Membros.Isento = 0)
+ORDER BY PesoGrupos.Peso
+
+## Financeiro 2 ##
+SELECT        Membros.Nome, Membros.Cpf, Membros.Rg, Membros.GrupoDia, Membros.GrupoHorario, Membros.Cep, Membros.Logradouro, Membros.Bairro, Membros.Cidade, Membros.Estado, Membros.NumEnd, 
+                         PesoGrupos.Peso
+FROM            Membros INNER JOIN
+                         PesoGrupos ON Membros.GrupoDia + Membros.GrupoHorario = PesoGrupos.DiaHorario
+WHERE        (Membros.Isento = 1)
+ORDER BY PesoGrupos.Peso

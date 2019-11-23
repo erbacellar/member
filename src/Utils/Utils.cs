@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Management;
 using ComponentFactory.Krypton.Toolkit;
 using System.Globalization;
+using CashInBox.Extensions;
 
 namespace CashInBox
 {
@@ -1124,10 +1125,9 @@ namespace CashInBox
 
         }
 
-        public static List<String> recuperarDiasSemana()
+        public static List<string> recuperarDiasSemana()
         {
-
-            List<String> dias = new List<String>();
+            List<string> dias = new List<string>();
 
             dias.Add("Segunda");
             dias.Add("Terca");
@@ -1138,7 +1138,6 @@ namespace CashInBox
             dias.Add("Domingo");
 
             return dias;
-
         }
 
         public static List<String> recuperarHorarios()
@@ -1165,69 +1164,23 @@ namespace CashInBox
 
         }
 
-        public static List<String> recuperarMeses()
+        public static List<string> recuperarMeses()
         {
-
-            List<String> status = new List<String>();
-
-            status.Add("Janeiro");
-            status.Add("Fevereiro");
-            status.Add("Março");
-            status.Add("Abril");
-            status.Add("Maio");
-            status.Add("Junho");
-            status.Add("Julho");
-            status.Add("Agosto");
-            status.Add("Setembro");
-            status.Add("Outubro");
-            status.Add("Novembro");
-            status.Add("Dezembro");
-
-            return status;
-
+            var meses = DateTimeFormatInfo.CurrentInfo.MonthNames.ToList();
+            meses.ForEach(x => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(x));
+            return meses;
         }
         public static int NumeroMes(string mes)
         {
-            switch (mes)
-            {
-                case "Janeiro":
-                    return 1;
-                case "Fevereiro":
-                    return 2;
-                case "Março":
-                    return 3;
-                case "Abril":
-                    return 4;
-                case "Maio":
-                    return 5;
-                case "Junho":
-                    return 6;
-                case "Julho":
-                    return 7;
-                case "Agosto":
-                    return 8;
-                case "Setembro":
-                    return 9;
-                case "Outubro":
-                    return 10;
-                case "Novembro":
-                    return 11;
-                case "Dezembro":
-                    return 12;
-            }
-
-            return 0;
+            int month = DateTimeFormatInfo.CurrentInfo.MonthNames.ToList().IndexOf(mes.ToLower()) + 1;            
+            return month;
         }
         public static List<String> recuperarIsento()
         {
-
             List<String> isentos = new List<String>();
-
             isentos.Add("Sim");
             isentos.Add("Não");
-
             return isentos;
-
         }
     }
 }

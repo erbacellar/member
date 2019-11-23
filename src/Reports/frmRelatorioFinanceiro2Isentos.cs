@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CashInBox.Enums;
+using CashInBox.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +19,33 @@ namespace CashInBox
             InitializeComponent();
         }
 
-        private void frmRelatorioFinanceiro2Isentos_Load(object sender, EventArgs e)
+        private async void frmRelatorioFinanceiro2Isentos_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsRelatorioFinanceiro.RelatorioFinanceiro' table. You can move, or remove it, as needed.
-            this.RelatorioFinanceiroTableAdapter.FillByIsento(this.dsRelatorioFinanceiro.RelatorioFinanceiro);
+            var membrosPeso = await MembroDAO.GetMembrosPesoGrupo();
+            if (membrosPeso.Any())
+            {
+                membrosPeso = membrosPeso.Where(x => x.Membro.Isento.HasValue && x.Membro.Isento.Value).OrderBy(x => x.Peso);
+
+                foreach (var item in membrosPeso)
+                {
+                    var membro = item.Membro;
+                    var peso = item.Peso;
+                    dsRelatorioFinanceiro.RelatorioFinanceiro.AddRelatorioFinanceiroRow(
+                        membro.Nome,
+                        membro.Cpf,
+                        membro.Rg,
+                        membro.GrupoDia,
+                        membro.GrupoHorario,
+                        membro.Cep,
+                        membro.Logradouro,
+                        membro.Bairro,
+                        membro.Cidade,
+                        membro.Estado,
+                        membro.NumEnd,
+                        peso);
+
+                }
+            }
 
             this.rptRelatorioFinanceiro.RefreshReport();
         }

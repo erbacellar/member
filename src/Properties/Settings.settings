@@ -8,10 +8,18 @@
     <Setting Name="MemberConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=ERNANE-NOTEBOOK\SQLEXPRESS;Initial Catalog=Member;Persist Security Info=True;User ID=sa;Password=ernane92&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=DESKTOP-3QQEO96\\SQLEXPRESS;Initial Catalog=Member;Persist Security Info=True;User ID=member-user;Password=#Matheus190504&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=ERNANE-NOTEBOOK\SQLEXPRESS;Initial Catalog=Member;Persist Security Info=True;User ID=sa;Password=ernane92</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-3QQEO96\\SQLEXPRESS;Initial Catalog=Member;Persist Security Info=True;User ID=member-user;Password=#Matheus190504</Value>
+    </Setting>
+    <Setting Name="MemberConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DESKTOP-3QQEO96\SQLEXPRESS;Initial Catalog=Member;Persist Security Info=True;User ID=member-user;Password=#Matheus190504&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DESKTOP-3QQEO96\SQLEXPRESS;Initial Catalog=Member;Persist Security Info=True;User ID=member-user;Password=#Matheus190504</Value>
     </Setting>
   </Settings>
 </SettingsFile>

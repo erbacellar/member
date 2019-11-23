@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CashInBox
@@ -17,10 +12,33 @@ namespace CashInBox
             InitializeComponent();
         }
 
-        private void frmRelFinanceiro_Load(object sender, EventArgs e)
+        private async void frmRelFinanceiro_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsRelatorioFinanceiro.RelatorioFinanceiro' table. You can move, or remove it, as needed.
-            this.RelatorioFinanceiroTableAdapter.Fill(this.dsRelatorioFinanceiro.RelatorioFinanceiro);
+            var membrosPeso = await MembroDAO.GetMembrosPesoGrupo();
+            if (membrosPeso.Any())
+            {
+                membrosPeso = membrosPeso.Where(x => x.Membro.Isento.HasValue && !x.Membro.Isento.Value).OrderBy(x => x.Peso);
+
+                foreach (var item in membrosPeso)
+                {
+                    var membro = item.Membro;
+                    var peso = item.Peso;
+                    dsRelatorioFinanceiro.RelatorioFinanceiro.AddRelatorioFinanceiroRow(
+                        membro.Nome,
+                        membro.Cpf,
+                        membro.Rg,
+                        membro.GrupoDia,
+                        membro.GrupoHorario,
+                        membro.Cep,
+                        membro.Logradouro,
+                        membro.Bairro,
+                        membro.Cidade,
+                        membro.Estado,
+                        membro.NumEnd,
+                        peso);
+
+                }
+            }
 
             this.rptRelatorioFinanceiro.RefreshReport();
         }

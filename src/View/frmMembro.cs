@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CashInBox.Controller;
 using ComponentFactory.Krypton.Toolkit;
 using Microsoft.VisualBasic.PowerPacks;
 
@@ -1154,6 +1155,22 @@ namespace CashInBox
         private Point getLocation(Control c)
         {
             return new Point(c.Location.X - 3, c.Location.Y - 5);
+        }
+
+        private async void MskCep_Leave(object sender, EventArgs e)
+        {
+            FocusOutTextMask(sender, e);
+            if(!string.IsNullOrEmpty(mskCep.Text))
+            {
+                var endereco = await CepService.EnderecoPorCep(Utils.RemoveCaracteresEspeciais(mskCep.Text, false, false));
+                if(endereco != null)
+                {
+                    txtEndereco.Text = endereco.Logradouro;
+                    txtBairro.Text = endereco.Bairro;
+                    txtCidade.Text = endereco.Localidade;
+                    cboEstados.SelectedItem = endereco.Uf;
+                }
+            }
         }
     }
 }

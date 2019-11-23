@@ -17,10 +17,37 @@ namespace CashInBox
             InitializeComponent();
         }
 
-        private void frmRelBiblioteca_Load(object sender, EventArgs e)
+        private async void frmRelBiblioteca_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsMembros.Membros' table. You can move, or remove it, as needed.
-            this.RelatorioBibliotecaTableAdapter.Fill(this.dsRelatorioBiblioteca.RelatorioBiblioteca);
+            var membrosPeso = await MembroDAO.GetMembrosPesoGrupo();
+            if (membrosPeso.Any())
+            {
+                membrosPeso = membrosPeso.Where(x => x.Membro.Isento.HasValue && !x.Membro.Isento.Value).OrderBy(x => x.Peso);
+
+                foreach (var item in membrosPeso)
+                {
+                    var membro = item.Membro;
+                    var peso = item.Peso;
+                    dsRelatorioBiblioteca.RelatorioBiblioteca.AddRelatorioBibliotecaRow(
+                        membro.Nome,
+                        membro.Cpf,
+                        membro.Rg,
+                        membro.GrupoDia,
+                        membro.GrupoHorario,
+                        membro.Cep,
+                        membro.Logradouro,
+                        membro.Bairro,
+                        membro.Cidade,
+                        membro.Estado,
+                        membro.NumEnd,
+                        membro.Telefone1,
+                        membro.Telefone2,
+                        membro.Telefone3,
+                        membro.Telefone4,
+                        peso);
+
+                }
+            }
 
             this.rptRelatorioBiblioteca.RefreshReport();
         }
