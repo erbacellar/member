@@ -44,7 +44,7 @@ namespace CashInBox
                 }
                 else
                 {
-                    usu = UsuarioDAO.ProcurarUsuarioPorLogin(txtUser.Text);
+                    //usu = UsuarioDAO.ProcurarUsuarioPorLogin(txtUser.Text);
 
                     //Verifica se o objeto login trazido do banco
                     //é diferente de nulo

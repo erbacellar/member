@@ -163,19 +163,11 @@
     <Compile Include="BackgroundWorker\ProgressoSalvar.Designer.cs">
       <DependentUpon>ProgressoSalvar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class Access DataBase\Entities.cs" />
     <Compile Include="Class Access DataBase\FirebaseContext.cs" />
-    <Compile Include="Class Access DataBase\SingletonObjectContext.cs" />
     <Compile Include="Controller\CepService.cs" />
-    <Compile Include="Controller\VersaoAtualService.cs" />
-    <Compile Include="DAO\CabecalhoDAO.cs" />
     <Compile Include="DAO\MembroDAO.cs" />
-    <Compile Include="DAO\FuncionalidadeDAO.cs" />
-    <Compile Include="DAO\FuncionarioDAO.cs" />
-    <Compile Include="DAO\PerfilDAO.cs" />
+    <Compile Include="DAO\VoluntarioDAO.cs" />
     <Compile Include="DAO\PesoGruposDAO.cs" />
-    <Compile Include="DAO\UsuarioDAO.cs" />
-    <Compile Include="DAO\VersaoAtualDAO.cs" />
     <Compile Include="DataSets\dsAniversariantes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -233,6 +225,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsVoluntarios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Enums\HourType.cs" />
+    <Compile Include="Enums\PhoneType.cs" />
+    <Compile Include="Enums\SaveType.cs" />
     <Compile Include="Enums\StatusType.cs" />
     <Compile Include="Exceptions\ErrorException.cs" />
     <Compile Include="Exceptions\InfoException.cs" />
@@ -309,14 +304,13 @@
     <Compile Include="Model\MembroPeso.cs" />
     <Compile Include="Model\PesoGrupo.cs" />
     <Compile Include="Model\GridConsultarFechamentoCaixa.cs" />
-    <Compile Include="Model\Cabecalho.cs" />
     <Compile Include="Model\Membro.cs" />
     <Compile Include="Model\Funcionalidade.cs" />
-    <Compile Include="Model\Funcionario.cs" />
+    <Compile Include="Model\Voluntario.cs" />
     <Compile Include="Model\GridConsultarMembro.cs" />
     <Compile Include="Model\ItemFuncionalidade.cs" />
     <Compile Include="Model\Perfil.cs" />
-    <Compile Include="Model\TelefoneFuncionario.cs" />
+    <Compile Include="Model\Telefone.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -347,18 +341,11 @@
     <Compile Include="Utils\ValidaEmail.cs" />
     <Compile Include="Utils\ValidaPlaca.cs" />
     <Compile Include="Utils\ValidaTelefone.cs" />
-    <Compile Include="Utils\VerificarAcesso.cs" />
     <Compile Include="View\frmAbertura.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmAbertura.Designer.cs">
       <DependentUpon>frmAbertura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\frmConfigImagemCabecalho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmConfigImagemCabecalho.Designer.cs">
-      <DependentUpon>frmConfigImagemCabecalho.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmConsultarCep.cs">
       <SubType>Form</SubType>
@@ -372,11 +359,11 @@
     <Compile Include="View\frmConsultarMembro.Designer.cs">
       <DependentUpon>frmConsultarMembro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmConsultarFuncionario.cs">
+    <Compile Include="View\frmConsultarVoluntario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmConsultarFuncionario.Designer.cs">
-      <DependentUpon>frmConsultarFuncionario.cs</DependentUpon>
+    <Compile Include="View\frmConsultarVoluntario.Designer.cs">
+      <DependentUpon>frmConsultarVoluntario.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmMembro.cs">
       <SubType>Form</SubType>
@@ -384,11 +371,11 @@
     <Compile Include="View\frmMembro.Designer.cs">
       <DependentUpon>frmMembro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmFuncionario.cs">
+    <Compile Include="View\frmVoluntario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmFuncionario.Designer.cs">
-      <DependentUpon>frmFuncionario.cs</DependentUpon>
+    <Compile Include="View\frmVoluntario.Designer.cs">
+      <DependentUpon>frmVoluntario.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmLogar.cs">
       <SubType>Form</SubType>
@@ -396,23 +383,11 @@
     <Compile Include="View\frmLogar.Designer.cs">
       <DependentUpon>frmLogar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmPerfil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmPerfil.Designer.cs">
-      <DependentUpon>frmPerfil.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\frmUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmUsuario.Designer.cs">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BackgroundWorker\ProgressoAtualizacao.resx">
       <DependentUpon>ProgressoAtualizacao.cs</DependentUpon>
@@ -479,35 +454,26 @@
     <EmbeddedResource Include="View\frmAbertura.resx">
       <DependentUpon>frmAbertura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmConfigImagemCabecalho.resx">
-      <DependentUpon>frmConfigImagemCabecalho.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\frmConsultarCep.resx">
       <DependentUpon>frmConsultarCep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmConsultarMembro.resx">
       <DependentUpon>frmConsultarMembro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmConsultarFuncionario.resx">
-      <DependentUpon>frmConsultarFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmConsultarVoluntario.resx">
+      <DependentUpon>frmConsultarVoluntario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmMembro.resx">
       <DependentUpon>frmMembro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmFuncionario.resx">
-      <DependentUpon>frmFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmVoluntario.resx">
+      <DependentUpon>frmVoluntario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmLogar.resx">
       <DependentUpon>frmLogar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmPerfil.resx">
-      <DependentUpon>frmPerfil.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmUsuario.resx">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CashInBox_1_TemporaryKey.pfx" />
     <None Include="CashInBox_TemporaryKey.pfx" />

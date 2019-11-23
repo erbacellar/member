@@ -145,11 +145,6 @@
             this.cmdMembro.Text = "Membros";
             this.cmdMembro.Execute += new System.EventHandler(this.btnMembroes_Click);
             // 
-            // cmdPerfis
-            // 
-            this.cmdPerfis.Text = "Perfis";
-            this.cmdPerfis.Execute += new System.EventHandler(this.btnPerfis_Click);
-            // 
             // conAcessos
             // 
             this.conAcessos.Items.AddRange(new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItemBase[] {
@@ -170,11 +165,6 @@
             // 
             this.kryptonContextMenuItem8.KryptonCommand = this.cmdUsuarios;
             this.kryptonContextMenuItem8.Text = "Usuários";
-            // 
-            // cmdUsuarios
-            // 
-            this.cmdUsuarios.Text = "Usuários";
-            this.cmdUsuarios.Execute += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // panMenuLateral
             // 

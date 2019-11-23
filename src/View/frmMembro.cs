@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CashInBox.Controller;
+using CashInBox.Enums;
+using CashInBox.Extensions;
 using ComponentFactory.Krypton.Toolkit;
 using Microsoft.VisualBasic.PowerPacks;
 
@@ -33,15 +35,7 @@ namespace CashInBox
         public frmMembro(String Login)
         {
             InitializeComponent();
-
-            if (!Login.Equals("admin"))
-            {
-                usuario = UsuarioDAO.ProcurarUsuarioPorLogin(Login);
-            }
-            else
-            {
-                usuario.Login = "admin";
-            }
+            usuario.Login = "admin";
         }
 
 
@@ -59,11 +53,6 @@ namespace CashInBox
 
         private void frmMembro_Load(object sender, EventArgs e)
         {
-            if (!usuario.Login.Equals("admin"))
-            {
-                VerificarAcesso.Verificar(this, usuario.Id);
-            }
-
             EstadoInicial();
 
             foreach (String x in Utils.recuperarListaEstados())
@@ -81,7 +70,7 @@ namespace CashInBox
                 cboGrupoHorario.Items.Add(x);
             }
 
-            foreach (String x in Utils.recuperarStatus())
+            foreach (String x in Utils.recuperarListaStatus())
             {
                 cboStatus.Items.Add(x);
             }
@@ -121,16 +110,7 @@ namespace CashInBox
 
         private void mskTelefone_Leave(object sender, EventArgs e)
         {
-            Utils.FocusOutTextMask(sender);
 
-            if (!mskTelefone.Text.Equals(""))
-            {
-                if (!ValidaTelefone.IsTel(mskTelefone.Text))
-                {
-                    MessageBox.Show("Telefone deve conter no mínimo 10 e no máximo 11 números");
-                    mskTelefone.Clear();
-                }
-            }
         }
 
         private void FocusInTextMask(object sender, EventArgs e)
@@ -253,6 +233,8 @@ namespace CashInBox
             {
                 txtNum.Text = "1";
             }
+
+            cboStatus.SelectedItem = EnumHelper.GetDescription(StatusType.ATIVO).ToUpper();
         }
 
         public String ValidarCamposObrigatorios()
@@ -1099,7 +1081,7 @@ namespace CashInBox
                         erroBairro.BorderColor = Color.Red;
                         break;
 
-                    case "txtCidade":  
+                    case "txtCidade":
                         erroCidade.Parent = canvas;
                         erroCidade.Size = getSize(c);
                         erroCidade.Location = getLocation(c);
@@ -1114,7 +1096,7 @@ namespace CashInBox
                         //theShape.CornerRadius = 12;
                         erroNumEnd.BorderColor = Color.Red;
                         break;
-                        
+
                 }
             }
             else if (c is MaskedTextBox)
@@ -1137,7 +1119,8 @@ namespace CashInBox
                         erroNumCep.BorderColor = Color.Red;
                         break;
                 }
-            }else if(c is ComboBox)
+            }
+            else if (c is ComboBox)
             {
                 erroEstado.Parent = canvas;
                 erroEstado.Size = getSize(c);
@@ -1160,10 +1143,10 @@ namespace CashInBox
         private async void MskCep_Leave(object sender, EventArgs e)
         {
             FocusOutTextMask(sender, e);
-            if(!string.IsNullOrEmpty(mskCep.Text))
+            if (!string.IsNullOrEmpty(mskCep.Text))
             {
                 var endereco = await CepService.EnderecoPorCep(Utils.RemoveCaracteresEspeciais(mskCep.Text, false, false));
-                if(endereco != null)
+                if (endereco != null && !string.IsNullOrEmpty(endereco.Uf))
                 {
                     txtEndereco.Text = endereco.Logradouro;
                     txtBairro.Text = endereco.Bairro;

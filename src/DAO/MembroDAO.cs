@@ -65,10 +65,10 @@ namespace CashInBox
         }
 
         //Metodo que retorna todos os Membros cadastrados do banco
-        public static async Task<IOrderedEnumerable<Membro>> ObterMembros()
+        public static async Task<List<Membro>> ObterMembros()
         {
             var membros = await Listar();
-            return ((IEnumerable<Membro>)membros).ToList().OrderBy(x => x.Nome);
+            return membros.OrderBy(x => x.Nome).ToList();
         }
 
         //Metodo que procura um Membro pelo ID
@@ -100,20 +100,6 @@ namespace CashInBox
             }
         }
 
-        ////Metodo que procura um Membro por nome
-        //public static Membro Obter(string nome)
-        //{
-        //    Entities db = new Entities();
-        //    try
-        //    {
-        //        return db.Membros.FirstOrDefault(x => x.Nome.Equals(nome));
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //}
-
         //Metodo que procura um Membro por CPF
         public static async Task<Membro> ProcurarMembroPorCpf(Membro Membro)
         {
@@ -129,13 +115,13 @@ namespace CashInBox
         }
 
         //Metodo que retorna lista de Membros em ordem alfabética, por letra parcialmente inserida.Ex.:Insere "a", retorna:"Maria, Joana..."
-        public static async Task<IOrderedEnumerable<Membro>> ObterMembrosPorLetraParcial(Membro Membro)
+        public static async Task<List<Membro>> ObterMembrosPorLetraParcial(Membro Membro)
         {            
             try
             {
                 var membros = await Listar();
                 return membros
-                    .Where(x => x.Nome.ToLower().Contains(Membro.Nome.ToLower()) || x.Cpf.Contains(Membro.Cpf)).ToList().OrderBy(x => x.Nome);
+                    .Where(x => x.Nome.ToLower().Contains(Membro.Nome.ToLower()) || x.Cpf.Contains(Membro.Cpf)).ToList().OrderBy(x => x.Nome).ToList();
             }
             catch
             {

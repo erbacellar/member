@@ -27,14 +27,7 @@ namespace CashInBox
         public frmPrincipal(String Login)
         {
             InitializeComponent();
-            if (!Login.Equals("admin"))
-            {
-                usu = UsuarioDAO.ProcurarUsuarioPorLogin(Login);
-            }
-            else
-            {
-                usu.Login = "admin";
-            }
+            usu.Login = "admin";
         }
 
         public void FocusInBotao(object sender, EventArgs e)
@@ -51,24 +44,8 @@ namespace CashInBox
 
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
-            frmFuncionario f = new frmFuncionario(usu.Login);
+            frmVoluntario f = new frmVoluntario(usu.Login);
             f.ShowDialog();
-        }
-
-        private void btnPerfis_Click(object sender, EventArgs e)
-        {
-            frmPerfil f = new frmPerfil(usu.Login);
-            f.ShowDialog();
-
-            frmPrincipalTeste_Load(sender, e);
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            frmUsuario f = new frmUsuario(usu.Login);
-            f.ShowDialog();
-
-            frmPrincipalTeste_Load(sender, e);
         }
 
         private void btnDeslogar_Click(object sender, EventArgs e)
@@ -96,13 +73,7 @@ namespace CashInBox
             {
                 lblUsuarioLogado.Text = "Logado como: " + usu.Funcionario.Nome;
                 Desabilitar();
-                HabilitarDeAcordoComPerfil();
             }
-        }
-
-        private void HabilitarDeAcordoComPerfil()
-        {
-            VerificarAcesso.Verificar(this, usu.Id);
         }
 
         private void Desabilitar()
@@ -132,12 +103,6 @@ namespace CashInBox
             backgroundWorker.RunWorkerAsync();
             _progresso = new ProgressoAtualizacao();
             _progresso.ShowDialog();
-        }
-
-        private void btnImagem_Click(object sender, EventArgs e)
-        {
-            frmConfigImagemCabecalho f = new frmConfigImagemCabecalho();
-            f.ShowDialog();
         }
 
         #region Atualizacao do sistema

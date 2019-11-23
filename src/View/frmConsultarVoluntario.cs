@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CashInBox
 {
     public partial class frmConsultarFuncionario : Form
     {
-        frmFuncionario formFuncionario = null;
+        frmVoluntario formFuncionario = null;
 
         public frmConsultarFuncionario(Form f)
         {
@@ -19,37 +14,34 @@ namespace CashInBox
 
             if (f.Name.Equals("frmFuncionario"))
             {
-                formFuncionario = (frmFuncionario)f;
+                formFuncionario = (frmVoluntario)f;
             }
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private async void btnPesquisar_Click(object sender, EventArgs e)
         {
             grdCFuncionario.Rows.Clear();
+            List<Voluntario> voluntarios;
 
-            if (txtCFuncionario.Text.Equals(""))
+            if (!string.IsNullOrEmpty(txtCFuncionario.Text))
             {
-                foreach (Funcionario x in FuncionarioDAO.ObterFuncionarios())
-                {
-                    grdCFuncionario.Rows.Add(x.Id, x.Cpf, x.Rg, x.Nome);
-                }
+                Voluntario voluntario = new Voluntario();
+                voluntario.Nome = txtCFuncionario.Text;
+                voluntario.Cpf = txtCFuncionario.Text;
+                voluntarios = await VoluntarioDAO.ObterPorNomeOuCpf(voluntario);
             }
             else
-            {
-                Funcionario funcConsulta = new Funcionario();
-                funcConsulta.Nome = txtCFuncionario.Text;
-                funcConsulta.Cpf = txtCFuncionario.Text;
+                voluntarios = await VoluntarioDAO.Listar();
 
-                foreach (Funcionario x in FuncionarioDAO.ObterFuncionariosPorLetraParcial(funcConsulta))
-                {
-                    grdCFuncionario.Rows.Add(x.Id, x.Cpf, x.Rg, x.Nome);
-                }
+            foreach (Voluntario voluntario in voluntarios)
+            {
+                grdCFuncionario.Rows.Add(voluntario.Key, voluntario.Cpf, voluntario.Rg, voluntario.Nome);
             }
 
             Utils.InformarConsultaVazia(grdCFuncionario);
         }
 
-        private void grdCFuncionario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void grdCFuncionario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (formFuncionario != null)
             {
@@ -57,13 +49,14 @@ namespace CashInBox
                 {
                     Utils.LimparCampos(formFuncionario);
 
-                    Funcionario func = new Funcionario();
-                    func.Id = int.Parse(grdCFuncionario.CurrentRow.Cells[0].Value.ToString());
-                    func = FuncionarioDAO.ProcurarFuncionarioPorId(func);
+                    Voluntario func = new Voluntario();
+                    var key = grdCFuncionario.CurrentRow.Cells[0].Value.ToString();
+                    func = await VoluntarioDAO.ObterPorKey(key);
 
                     formFuncionario.txtCodigo.Text = func.Id.ToString();
+                    formFuncionario.txtKey.Text = func.Key;
                     formFuncionario.dtpData.Value = func.DataCadastro;
-                    formFuncionario.txtFuncionario.Text = func.Nome;
+                    formFuncionario.txtVoluntario.Text = func.Nome;
                     formFuncionario.mskCep.Text = func.Cep;
                     formFuncionario.txtEndereco.Text = func.Logradouro;
                     formFuncionario.txtNumEnd.Text = func.NumeroEnd;
@@ -71,7 +64,7 @@ namespace CashInBox
                     formFuncionario.txtCidade.Text = func.Cidade;
                     formFuncionario.cboEstados.SelectedItem = func.Estado;
 
-                    foreach (TelefoneFuncionario x in func.Telefones)
+                    foreach (Telefone x in func.Telefones)
                     {
                         formFuncionario.grdTelefones.Rows.Add(x.NumTel, x.TipoTel);
                     }
@@ -88,10 +81,9 @@ namespace CashInBox
                     formFuncionario.btnEditar.Enabled = true;
                     formFuncionario.btnSalvar.Enabled = false;
                     formFuncionario.btnConsultar.Enabled = true;
-                    formFuncionario.EsconderErros();
 
                     Close();
-                    
+
                 }
                 catch
                 {

@@ -32,13 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdCFuncionario = new System.Windows.Forms.DataGridView();
-            this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label18 = new System.Windows.Forms.Label();
             this.txtCFuncionario = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.grdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdVoluntario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdCFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.grdID,
             this.grdCPF,
             this.grdRG,
-            this.grdFuncionario});
+            this.grdVoluntario});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,31 +80,6 @@
             this.grdCFuncionario.Size = new System.Drawing.Size(745, 226);
             this.grdCFuncionario.TabIndex = 95;
             this.grdCFuncionario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCFuncionario_CellDoubleClick);
-            // 
-            // grdID
-            // 
-            this.grdID.HeaderText = "ID";
-            this.grdID.Name = "grdID";
-            this.grdID.ReadOnly = true;
-            this.grdID.Visible = false;
-            // 
-            // grdCPF
-            // 
-            this.grdCPF.HeaderText = "CPF";
-            this.grdCPF.Name = "grdCPF";
-            this.grdCPF.ReadOnly = true;
-            // 
-            // grdRG
-            // 
-            this.grdRG.HeaderText = "RG";
-            this.grdRG.Name = "grdRG";
-            this.grdRG.ReadOnly = true;
-            // 
-            // grdFuncionario
-            // 
-            this.grdFuncionario.HeaderText = "Nome do Funcionario";
-            this.grdFuncionario.Name = "grdFuncionario";
-            this.grdFuncionario.ReadOnly = true;
             // 
             // label18
             // 
@@ -147,7 +122,7 @@
             this.btnPesquisar.OverrideFocus.Border.Rounding = 5;
             this.btnPesquisar.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.Transparent;
             this.btnPesquisar.OverrideFocus.Content.ShortText.Color2 = System.Drawing.Color.Transparent;
-            this.btnPesquisar.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Hasteristico", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Size = new System.Drawing.Size(45, 22);
             this.btnPesquisar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
             this.btnPesquisar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
@@ -165,6 +140,31 @@
             this.btnPesquisar.Values.Text = "Consultar";
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             this.btnPesquisar.MouseEnter += new System.EventHandler(this.btnPesquisar_MouseEnter);
+            // 
+            // grdID
+            // 
+            this.grdID.HeaderText = "ID";
+            this.grdID.Name = "grdID";
+            this.grdID.ReadOnly = true;
+            this.grdID.Visible = false;
+            // 
+            // grdCPF
+            // 
+            this.grdCPF.HeaderText = "CPF";
+            this.grdCPF.Name = "grdCPF";
+            this.grdCPF.ReadOnly = true;
+            // 
+            // grdRG
+            // 
+            this.grdRG.HeaderText = "RG";
+            this.grdRG.Name = "grdRG";
+            this.grdRG.ReadOnly = true;
+            // 
+            // grdVoluntario
+            // 
+            this.grdVoluntario.HeaderText = "Nome do Voluntario";
+            this.grdVoluntario.Name = "grdVoluntario";
+            this.grdVoluntario.ReadOnly = true;
             // 
             // frmConsultarFuncionario
             // 
@@ -187,12 +187,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grdCFuncionario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grdID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grdCPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grdRG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grdFuncionario;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtCFuncionario;
         public ComponentFactory.Krypton.Toolkit.KryptonButton btnPesquisar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grdID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grdCPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grdRG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grdVoluntario;
     }
 }

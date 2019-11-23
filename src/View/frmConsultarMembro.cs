@@ -285,8 +285,8 @@ namespace CashInBox
             _progresso.Show();
 
             grids = new List<GridConsultarMembro>();
-            IOrderedEnumerable<Membro> membros;
-            IOrderedEnumerable<Membro> membrosAux;
+            List<Membro> membros;
+            List<Membro> membrosAux;
 
             if (txtConsultar.Text.Equals(""))
             {
@@ -301,60 +301,60 @@ namespace CashInBox
                 membros = await MembroDAO.ObterMembrosPorLetraParcial(membConsulta);
             }
 
-            membrosAux = membros.Where(x => x.Status != null && x.Status.Equals(status)).OrderBy(x => x.Nome);
+            membrosAux = membros.Where(x => x.Status != null && x.Status.Equals(status)).OrderBy(x => x.Nome).ToList();
             membros = membrosAux;
 
             if (grupoDia != "Todos" && grupoHorario != "Todos")
             {
                 membrosAux = membros.Where(x => x.GrupoDia.Equals(grupoDia)
-                    && x.GrupoHorario.Equals(grupoHorario)).OrderBy(x => x.Nome);
+                    && x.GrupoHorario.Equals(grupoHorario)).OrderBy(x => x.Nome).ToList();
 
                 membros = membrosAux;
             }
 
             if (!txtNum.Text.Equals(""))
             {
-                membrosAux = membros.Where(x => x.Numero.Contains(txtNum.Text)).OrderBy(x => x.Nome);
+                membrosAux = membros.Where(x => x.Numero.Contains(txtNum.Text)).OrderBy(x => x.Nome).ToList();
                 membros = membrosAux;
             }
 
             if (!txtEmail.Text.Equals(""))
             {
-                membrosAux = membros.Where(x => x.Email.Contains(txtEmail.Text)).OrderBy(x => x.Nome);
+                membrosAux = membros.Where(x => x.Email.Contains(txtEmail.Text)).OrderBy(x => x.Nome).ToList();
                 membros = membrosAux;
             }
 
             if (!txtBairro.Text.Equals(""))
             {
-                membrosAux = membros.Where(x => x.Bairro.Contains(txtBairro.Text)).OrderBy(x => x.Nome);
+                membrosAux = membros.Where(x => x.Bairro.Contains(txtBairro.Text)).OrderBy(x => x.Nome).ToList();
                 membros = membrosAux;
             }
 
             if (!txtCidade.Text.Equals(""))
             {
-                membrosAux = membros.Where(x => x.Cidade.Contains(txtCidade.Text)).OrderBy(x => x.Nome);
+                membrosAux = membros.Where(x => x.Cidade.Contains(txtCidade.Text)).OrderBy(x => x.Nome).ToList();
                 membros = membrosAux;
             }
 
             if (rdbTrabalhoVoluntarioS.Checked)
             {
-                membrosAux = membros.Where(x => x.GostariaTrabalhoVoluntario == true).OrderBy(x => x.Nome);
+                membrosAux = membros.Where(x => x.GostariaTrabalhoVoluntario == true).OrderBy(x => x.Nome).ToList();
                 membros = membrosAux;
             }
             if (rdbTrabalhoVoluntarioN.Checked)
             {
-                membrosAux = membros.Where(x => x.GostariaTrabalhoVoluntario == false).OrderBy(x => x.Nome);
+                membrosAux = membros.Where(x => x.GostariaTrabalhoVoluntario == false).OrderBy(x => x.Nome).ToList();
                 membros = membrosAux;
             }
 
             if (rdbSimB.Checked)
             {
-                membrosAux = membros.Where(x => x.Biblioteca == true).OrderBy(x => x.Nome);
+                membrosAux = membros.Where(x => x.Biblioteca == true).OrderBy(x => x.Nome).ToList();
                 membros = membrosAux;
             }
             if (rdbSimB.Checked)
             {
-                membrosAux = membros.Where(x => x.Biblioteca == false).OrderBy(x => x.Nome);
+                membrosAux = membros.Where(x => x.Biblioteca == false).OrderBy(x => x.Nome).ToList();
                 membros = membrosAux;
             }
 

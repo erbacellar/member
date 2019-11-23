@@ -8,6 +8,7 @@ using System.Management;
 using ComponentFactory.Krypton.Toolkit;
 using System.Globalization;
 using CashInBox.Extensions;
+using CashInBox.Enums;
 
 namespace CashInBox
 {
@@ -218,13 +219,6 @@ namespace CashInBox
                 MaskedTextBox m = txtBox as MaskedTextBox;
                 m.BackColor = Color.FromArgb(255, 246, 148);
             }
-        }
-
-        public static void FocusInRichText(object richtxtBox)
-        {
-            //faz o cast do tipo object para o tipo RichTextBox
-            RichTextBox t = richtxtBox as RichTextBox;
-            t.BackColor = Color.FromArgb(255, 246, 148);
         }
 
         public static void FocusOutRichText(object richtxtBox)
@@ -903,44 +897,7 @@ namespace CashInBox
             {
                 Mensagens.mensagemALERTA("Não foi encontrado nenhum registro com o valor informado ou não há nenhum registro cadastrado.");
             }
-        }
-
-        public static string gerarDataEmString()
-        {
-            string data = "";
-
-            if (DateTime.Now.Day.ToString().Length > 1)
-            {
-                data = DateTime.Now.Day.ToString();
-            }
-            else
-            {
-                data = "0" + DateTime.Now.Day.ToString();
-            }
-
-            if (DateTime.Now.Month.ToString().Length > 1)
-            {
-                data += DateTime.Now.Month.ToString();
-            }
-            else
-            {
-                data += "0" + DateTime.Now.Month.ToString();
-            }
-
-            data += DateTime.Now.Year.ToString();
-
-            return data;
-        }
-
-        public static string formatarCNPJ(long cnpj)
-        {
-            return String.Format(@"{0:00\.000\.000\/0000\-00}", cnpj);
-        }
-
-        public static string formatarCPF(long cpf)
-        {
-            return String.Format(@"{0:000\.000\.000\-00}", cpf);
-        }
+        }        
 
         public static string adicionarZerosEsquerda(int valor, int qtd)
         {
@@ -952,24 +909,6 @@ namespace CashInBox
             num += valor.ToString();
 
             return num;
-        }
-
-        public static string mascaraTelefone(string tel)
-        {
-            if (tel.Length < 10)
-            {
-                return String.Format("({0}){1}-{2}", "00", tel.Substring(0, 4), tel.Substring(4));
-            }
-            else
-            {
-                return String.Format("({0}){1}-{2}", tel.Substring(0, 2), tel.Substring(2, 4), tel.Substring(6));
-            }
-        }
-
-        public static string mascaraPlaca(string placa)
-        {
-
-            return String.Format("{0}-{1}", placa.Substring(0, 3), placa.Substring(3));
         }
 
         public static string RemoveCaracteresEspeciais(string texto, bool aceitaEspaco, bool substituiAcentos)
@@ -1034,39 +973,15 @@ namespace CashInBox
             return accents;
         }
 
-        public static String FormatarParaValorEmReais(float valor)
+        public static string FormatarParaValorEmReais(float valor)
         {
             return valor.ToString("#,0.00",
                   CultureInfo.CurrentCulture);
-        }
+        }        
 
-        public static String FormatarParaValorComCifrao(float valor)
-        {
-            return String.Format("{0:C}", valor);
-        }
+        public static List<string> recuperarListaEstados(){
 
-        public static string converterParaValor(string texto)
-        {
-
-            if (!string.IsNullOrEmpty(texto))
-            {
-                try
-                {
-                    float valor = float.Parse(texto);
-                    return FormatarParaValorEmReais(valor);
-                }
-                catch
-                {
-                    throw new ServiceException("Informe valores válidos no campo.");
-                    return "0,00";
-                }
-            }
-            return "0,00";
-        }
-
-        public static List<String> recuperarListaEstados(){
-
-            List<String> estados = new List<String>();
+            List<string> estados = new List<string>();
 
             estados.Add("AC");
             estados.Add("AL");
@@ -1100,29 +1015,22 @@ namespace CashInBox
 
        }
 
-        public static List<String> recuperarListaTiposTel()
+        public static List<string> recuperarListaTiposTel()
         {
-
-            List<String> estados = new List<String>();
-
-            estados.Add("Comercial");
-            estados.Add("Celular");
-            estados.Add("Residencial");
-            
-            return estados;
-
+            return Enum.GetNames(typeof(PhoneType)).ToList();           
         }
 
-        public static List<String> recuperarListaStatus()
+        public static List<string> recuperarListaStatus()
         {
+            var listStatus = Enum.GetNames(typeof(StatusType)).ToList();
+            List<string> status = new List<string>();
 
-            List<String> status = new List<String>();
-
-            status.Add("Ativo");
-            status.Add("Inativo");
+            foreach (var item in listStatus)
+            {
+                status.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower()));
+            }
 
             return status;
-
         }
 
         public static List<string> recuperarDiasSemana()
@@ -1140,34 +1048,28 @@ namespace CashInBox
             return dias;
         }
 
-        public static List<String> recuperarHorarios()
+        public static List<string> recuperarHorarios()
         {
+            var listHorarios = Enum.GetNames(typeof(HourType)).ToList();
+            List<string> horarios = new List<string>();
 
-            List<String> horarios = new List<String>();
-
-            horarios.Add("Manhã");
-            horarios.Add("Tarde");
-            horarios.Add("Noite");
+            foreach (var item in listHorarios)
+            {
+                horarios.Add(EnumHelper.GetDescription(EnumHelper.ParseEnum<HourType>(item)));
+            }
 
             return horarios;
-
-        }
-        public static List<String> recuperarStatus()
-        {
-
-            List<String> status = new List<String>();
-
-            status.Add("Ativo");
-            status.Add("Inativo");
-
-            return status;
-
         }
 
         public static List<string> recuperarMeses()
         {
-            var meses = DateTimeFormatInfo.CurrentInfo.MonthNames.ToList();
-            meses.ForEach(x => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(x));
+            var listMeses = DateTimeFormatInfo.CurrentInfo.MonthNames.ToList();
+            List<string> meses = new List<string>();
+            foreach (var item in listMeses)
+            {
+                meses.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower()));
+            }
+
             return meses;
         }
         public static int NumeroMes(string mes)
@@ -1175,9 +1077,9 @@ namespace CashInBox
             int month = DateTimeFormatInfo.CurrentInfo.MonthNames.ToList().IndexOf(mes.ToLower()) + 1;            
             return month;
         }
-        public static List<String> recuperarIsento()
+        public static List<string> recuperarIsento()
         {
-            List<String> isentos = new List<String>();
+            List<string> isentos = new List<string>();
             isentos.Add("Sim");
             isentos.Add("Não");
             return isentos;

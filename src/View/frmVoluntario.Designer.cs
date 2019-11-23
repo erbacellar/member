@@ -1,6 +1,6 @@
 ﻿namespace CashInBox
 {
-    partial class frmFuncionario
+    partial class frmVoluntario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lblUf = new System.Windows.Forms.Label();
             this.lblNumeroEnd = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.txtFuncionario = new System.Windows.Forms.TextBox();
+            this.txtVoluntario = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnRemoverTel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -73,6 +73,7 @@
             this.btnSalvar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnEditar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNovo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtKey = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdTelefones)).BeginInit();
             this.panMenu.SuspendLayout();
             this.SuspendLayout();
@@ -169,6 +170,7 @@
             this.mskCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskCep.Click += new System.EventHandler(this.PonteiroInicialMascara);
             this.mskCep.Enter += new System.EventHandler(this.FocusInTextMask);
+            this.mskCep.Leave += new System.EventHandler(this.MskCep_Leave);
             // 
             // mskCPF
             // 
@@ -224,30 +226,30 @@
             // 
             this.grdTelefones.AllowUserToAddRows = false;
             this.grdTelefones.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(129)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdTelefones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(125)))), ((int)(((byte)(129)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdTelefones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdTelefones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdTelefones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdTelefones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grdTelefones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTelefones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.grdFone,
             this.grdTipo});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdTelefones.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdTelefones.DefaultCellStyle = dataGridViewCellStyle6;
             this.grdTelefones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grdTelefones.Location = new System.Drawing.Point(453, 150);
             this.grdTelefones.Name = "grdTelefones";
@@ -317,9 +319,9 @@
             this.Nome.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nome.Location = new System.Drawing.Point(12, 144);
             this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(135, 17);
+            this.Nome.Size = new System.Drawing.Size(128, 17);
             this.Nome.TabIndex = 133;
-            this.Nome.Text = "Nome do Funcionário";
+            this.Nome.Text = "Nome do Voluntário";
             // 
             // DtCadastro
             // 
@@ -454,17 +456,17 @@
             this.txtEndereco.Enter += new System.EventHandler(this.FocusInTextMask);
             this.txtEndereco.Leave += new System.EventHandler(this.FocusOutTextMask);
             // 
-            // txtFuncionario
+            // txtVoluntario
             // 
-            this.txtFuncionario.BackColor = System.Drawing.SystemColors.Window;
-            this.txtFuncionario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFuncionario.Location = new System.Drawing.Point(15, 164);
-            this.txtFuncionario.MaxLength = 200;
-            this.txtFuncionario.Name = "txtFuncionario";
-            this.txtFuncionario.Size = new System.Drawing.Size(403, 20);
-            this.txtFuncionario.TabIndex = 3;
-            this.txtFuncionario.Enter += new System.EventHandler(this.FocusInTextMask);
-            this.txtFuncionario.Leave += new System.EventHandler(this.FocusOutTextMask);
+            this.txtVoluntario.BackColor = System.Drawing.SystemColors.Window;
+            this.txtVoluntario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtVoluntario.Location = new System.Drawing.Point(15, 164);
+            this.txtVoluntario.MaxLength = 200;
+            this.txtVoluntario.Name = "txtVoluntario";
+            this.txtVoluntario.Size = new System.Drawing.Size(403, 20);
+            this.txtVoluntario.TabIndex = 3;
+            this.txtVoluntario.Enter += new System.EventHandler(this.FocusInTextMask);
+            this.txtVoluntario.Leave += new System.EventHandler(this.FocusOutTextMask);
             // 
             // dtpData
             // 
@@ -506,7 +508,7 @@
             this.btnRemoverTel.OverrideFocus.Border.Rounding = 5;
             this.btnRemoverTel.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.Transparent;
             this.btnRemoverTel.OverrideFocus.Content.ShortText.Color2 = System.Drawing.Color.Transparent;
-            this.btnRemoverTel.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Hasteristico", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoverTel.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverTel.Size = new System.Drawing.Size(24, 30);
             this.btnRemoverTel.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(84)))), ((int)(((byte)(62)))));
             this.btnRemoverTel.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(84)))), ((int)(((byte)(62)))));
@@ -547,7 +549,7 @@
             this.btnAdicionarTel.OverrideFocus.Border.Rounding = 5;
             this.btnAdicionarTel.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.Transparent;
             this.btnAdicionarTel.OverrideFocus.Content.ShortText.Color2 = System.Drawing.Color.Transparent;
-            this.btnAdicionarTel.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Hasteristico", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarTel.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionarTel.Size = new System.Drawing.Size(24, 28);
             this.btnAdicionarTel.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(84)))), ((int)(((byte)(62)))));
             this.btnAdicionarTel.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(84)))), ((int)(((byte)(62)))));
@@ -602,7 +604,7 @@
             this.btnConsultar.OverrideFocus.Border.Rounding = 5;
             this.btnConsultar.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnConsultar.OverrideFocus.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnConsultar.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Hasteristico", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.Size = new System.Drawing.Size(66, 45);
             this.btnConsultar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
             this.btnConsultar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
@@ -643,7 +645,7 @@
             this.btnSalvar.OverrideFocus.Border.Rounding = 5;
             this.btnSalvar.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnSalvar.OverrideFocus.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnSalvar.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Hasteristico", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Size = new System.Drawing.Size(49, 45);
             this.btnSalvar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
             this.btnSalvar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
@@ -684,7 +686,7 @@
             this.btnEditar.OverrideFocus.Border.Rounding = 5;
             this.btnEditar.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnEditar.OverrideFocus.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnEditar.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Hasteristico", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Size = new System.Drawing.Size(45, 45);
             this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
             this.btnEditar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
@@ -725,7 +727,7 @@
             this.btnNovo.OverrideFocus.Border.Rounding = 5;
             this.btnNovo.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnNovo.OverrideFocus.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnNovo.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Hasteristico", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.Size = new System.Drawing.Size(45, 45);
             this.btnNovo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
             this.btnNovo.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(175)))), ((int)(((byte)(241)))));
@@ -745,12 +747,24 @@
             this.btnNovo.Click += new System.EventHandler(this.btNovo_Click);
             this.btnNovo.MouseEnter += new System.EventHandler(this.FocuInButton);
             // 
-            // frmFuncionario
+            // txtKey
+            // 
+            this.txtKey.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKey.Location = new System.Drawing.Point(101, 66);
+            this.txtKey.Name = "txtKey";
+            this.txtKey.ReadOnly = true;
+            this.txtKey.Size = new System.Drawing.Size(25, 22);
+            this.txtKey.TabIndex = 174;
+            this.txtKey.TabStop = false;
+            this.txtKey.Visible = false;
+            // 
+            // frmVoluntario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(774, 477);
+            this.Controls.Add(this.txtKey);
             this.Controls.Add(this.panMenu);
             this.Controls.Add(this.btnRemoverTel);
             this.Controls.Add(this.btnAdicionarTel);
@@ -784,12 +798,12 @@
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtEndereco);
-            this.Controls.Add(this.txtFuncionario);
+            this.Controls.Add(this.txtVoluntario);
             this.Controls.Add(this.dtpData);
             this.Controls.Add(this.txtCodigo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "frmFuncionario";
+            this.Name = "frmVoluntario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Voluntários";
             this.Load += new System.EventHandler(this.frmFuncionario_Load);
@@ -832,7 +846,7 @@
         public System.Windows.Forms.DataGridView grdTelefones;
         public System.Windows.Forms.TextBox txtRg;
         public System.Windows.Forms.TextBox txtObservacao;
-        public System.Windows.Forms.TextBox txtFuncionario;
+        public System.Windows.Forms.TextBox txtVoluntario;
         public System.Windows.Forms.DateTimePicker dtpData;
         public System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn grdFone;
@@ -844,5 +858,6 @@
         public ComponentFactory.Krypton.Toolkit.KryptonButton btnSalvar;
         public ComponentFactory.Krypton.Toolkit.KryptonButton btnEditar;
         public ComponentFactory.Krypton.Toolkit.KryptonButton btnNovo;
+        public System.Windows.Forms.TextBox txtKey;
     }
 }

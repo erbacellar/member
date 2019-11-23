@@ -12,7 +12,7 @@ namespace CashInBox
     public partial class frmConsultarCep : Form
     {
 
-        frmFuncionario formFuncionario = null;
+        frmVoluntario formFuncionario = null;
         frmMembro formMembro = null;
 
         string numCep;
@@ -23,7 +23,7 @@ namespace CashInBox
 
             if (f.Name.Equals("frmFuncionario"))
             {
-                formFuncionario = (frmFuncionario)f;
+                formFuncionario = (frmVoluntario)f;
             }
             if (f.Name.Equals("frmMembro"))
             {
@@ -37,7 +37,7 @@ namespace CashInBox
 
             if (f.Name.Equals("frmFuncionario"))
             {
-                formFuncionario = (frmFuncionario)f;
+                formFuncionario = (frmVoluntario)f;
             }
             if (f.Name.Equals("frmMembro"))
             {
