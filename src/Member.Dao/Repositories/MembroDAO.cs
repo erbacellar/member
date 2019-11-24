@@ -17,9 +17,9 @@ namespace Member.Dao.Repositories
         //Metodo que inclui um Membro no banco
         public static async Task<bool> Incluir(Membro membro)
         {
-            var client = FirebaseContext.Instance;
             try
             {
+                var client = FirebaseContext.Instance;
                 membro.Id = Convert.ToInt32(membro.Numero);
                 var result = await client.Child(database).PostAsync(JsonConvert.SerializeObject(membro));
                 membro.Key = result.Key;
@@ -36,9 +36,9 @@ namespace Member.Dao.Repositories
         //Metodo que altera dados de um Membro do banco
         public static async Task<bool> Alterar(Membro membro)
         {
-            var client = FirebaseContext.Instance;
             try
             {
+                var client = FirebaseContext.Instance;
                 await client.Child(database).Child(membro.Key).PutAsync(membro);
                 return true;
             }
@@ -51,9 +51,9 @@ namespace Member.Dao.Repositories
         //Metodo que exclui um Membro do banco
         public static async Task<bool> Excluir(Membro membro)
         {
-            var client = FirebaseContext.Instance;
             try
             {
+                var client = FirebaseContext.Instance;
                 await client.Child(database).Child(membro.Key).DeleteAsync();
                 return true;
             }
@@ -65,9 +65,9 @@ namespace Member.Dao.Repositories
 
         public static async Task<bool> ExcluirTodos()
         {
-            var client = FirebaseContext.Instance;
             try
             {
+                var client = FirebaseContext.Instance;
                 await client.Child(database).DeleteAsync();
                 return true;
             }
@@ -87,10 +87,10 @@ namespace Member.Dao.Repositories
         //Metodo que procura um Membro pelo ID
         public static async Task<Membro> Obter(string key)
         {
-            var client = FirebaseContext.Instance;
 
             try
             {
+                var client = FirebaseContext.Instance;
                 var result = await client.Child(database).Child(key).OnceSingleAsync<Membro>();
                 return result;
             }
@@ -101,7 +101,7 @@ namespace Member.Dao.Repositories
         }
 
         public static async Task<int?> ObterUltimoMembroId()
-        {            
+        {
             try
             {
                 var membros = await Listar();
@@ -129,7 +129,7 @@ namespace Member.Dao.Repositories
 
         //Metodo que retorna lista de Membros em ordem alfabética, por letra parcialmente inserida.Ex.:Insere "a", retorna:"Maria, Joana..."
         public static async Task<List<Membro>> ObterMembrosPorLetraParcial(Membro Membro)
-        {            
+        {
             try
             {
                 var membros = await Listar();
@@ -143,21 +143,21 @@ namespace Member.Dao.Repositories
         }
 
         public static async Task<IOrderedEnumerable<Membro>> ObterMembrosPorVoluntarios()
-        {            
+        {
             try
             {
                 var membros = await Listar();
                 return membros
-                    .Where(x => x.GostariaTrabalhoVoluntario == true && 
-                    (x.DistribuicaoAlimento || 
-                    x.DistribuicaoAgasalho || 
-                    x.Biblioteca || 
-                    x.OracaoPasseDomicilio || 
-                    x.Passes || 
-                    x.Biblioteca || 
-                    x.Palestras || 
-                    x.AtendimentoFraterno || 
-                    x.VisitaMensalAsilo || 
+                    .Where(x => x.GostariaTrabalhoVoluntario == true &&
+                    (x.DistribuicaoAlimento ||
+                    x.DistribuicaoAgasalho ||
+                    x.Biblioteca ||
+                    x.OracaoPasseDomicilio ||
+                    x.Passes ||
+                    x.Biblioteca ||
+                    x.Palestras ||
+                    x.AtendimentoFraterno ||
+                    x.VisitaMensalAsilo ||
                     x.PasseDomingo)).ToList().OrderBy(x => x.Nome);
             }
             catch (Exception e)
@@ -168,43 +168,68 @@ namespace Member.Dao.Repositories
 
         public static async Task<IQueryable<MembroPeso>> GetMembrosPesoGrupo()
         {
-            var client = FirebaseContext.Instance;
-            var membros = await Listar();
-            var pesos = await PesoGruposDAO.Listar();
+            try
+            {
+                var client = FirebaseContext.Instance;
+                var membros = await Listar();
+                var pesos = await PesoGruposDAO.Listar();
 
-            var result = from m in membros.AsQueryable()
-                         join p in pesos.AsQueryable() on m.GrupoDia + m.GrupoHorario equals p.DiaHorario
-                         orderby p.Peso
-                         select new MembroPeso()
-                         {
-                             Membro = m,
-                             Peso = p.Peso
-                         };
-            return result;
+                var result = from m in membros.AsQueryable()
+                             join p in pesos.AsQueryable() on m.GrupoDia + m.GrupoHorario equals p.DiaHorario
+                             orderby p.Peso
+                             select new MembroPeso()
+                             {
+                                 Membro = m,
+                                 Peso = p.Peso
+                             };
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
         }
 
         public static async Task<List<Membro>> MembrosPorDiaHorario(string dia, string horario)
         {
-            var client = FirebaseContext.Instance;
-            var membros = await Listar();
+            try
+            {
+                var client = FirebaseContext.Instance;
+                var membros = await Listar();
 
-            var result = membros.Where(x => x.GrupoDia == dia && x.GrupoHorario == horario).OrderBy(x => x.Nome).ToList();
+                var result = membros.Where(x => x.GrupoDia == dia && x.GrupoHorario == horario).OrderBy(x => x.Nome).ToList();
 
-            return result;
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public static async Task<List<Membro>> Listar()
         {
-            var client = FirebaseContext.Instance;
-            var results = await client.Child(database).OnceAsync<Membro>();
-
-            var membros = new List<Membro>();
-            foreach (var item in results)
+            try
             {
-                membros.Add(item.Object);
-            }
+                var client = FirebaseContext.Instance;
+                var results = await client.Child(database).OnceAsync<Membro>();
 
-            return membros;
+                var membros = new List<Membro>();
+                foreach (var item in results)
+                {
+                    membros.Add(item.Object);
+                }
+
+                return membros;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

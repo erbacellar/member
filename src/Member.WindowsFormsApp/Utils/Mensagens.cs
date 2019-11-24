@@ -106,5 +106,12 @@ namespace CashInBox
             MessageBox.Show("Alguns campos obrigatórios não foram preenchidos, verifique e tente novamente", "Campos obrigatórios não preenchidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        public static void Mensagem_Erro_Conexao_Base_Dados()
+        {
+            MessageBox.Show("Não foi possível se conectar a base de dados. Verifique sua conexão com a internet e tente novamente.",
+                    "Erro na conexão com a base de dados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+        }
     }
 }

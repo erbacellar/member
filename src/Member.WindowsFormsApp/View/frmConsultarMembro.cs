@@ -48,16 +48,15 @@ namespace CashInBox
 
             status = cboStatus.SelectedItem.ToString();
 
-            
-            await Pesquisar();
-
             try
             {
+                await Pesquisar();
                 grdConsulta.Columns[0].Visible = false;
             }
             catch
             {
-
+                Mensagens.Mensagem_Erro_Conexao_Base_Dados();
+                _progresso.Close();
             }
 
         }
@@ -443,7 +442,8 @@ namespace CashInBox
                 cboGrupoHorario.Items.Add(x);
             }
 
-            foreach (String x in Utils.recuperarListaStatus()) {
+            foreach (String x in Utils.recuperarListaStatus())
+            {
                 cboStatus.Items.Add(x);
             }
 

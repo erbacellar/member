@@ -25,22 +25,29 @@ namespace CashInBox
             grdCFuncionario.Rows.Clear();
             List<Voluntario> voluntarios;
 
-            if (!string.IsNullOrEmpty(txtCFuncionario.Text))
+            try
             {
-                Voluntario voluntario = new Voluntario();
-                voluntario.Nome = txtCFuncionario.Text;
-                voluntario.Cpf = txtCFuncionario.Text;
-                voluntarios = await VoluntarioDAO.ObterPorNomeOuCpf(voluntario);
-            }
-            else
-                voluntarios = await VoluntarioDAO.Listar();
+                if (!string.IsNullOrEmpty(txtCFuncionario.Text))
+                {
+                    Voluntario voluntario = new Voluntario();
+                    voluntario.Nome = txtCFuncionario.Text;
+                    voluntario.Cpf = txtCFuncionario.Text;
+                    voluntarios = await VoluntarioDAO.ObterPorNomeOuCpf(voluntario);
+                }
+                else
+                    voluntarios = await VoluntarioDAO.Listar();
 
-            foreach (Voluntario voluntario in voluntarios)
+                foreach (Voluntario voluntario in voluntarios)
+                {
+                    grdCFuncionario.Rows.Add(voluntario.Key, voluntario.Cpf, voluntario.Rg, voluntario.Nome);
+                }
+
+                Utils.InformarConsultaVazia(grdCFuncionario);
+            }
+            catch
             {
-                grdCFuncionario.Rows.Add(voluntario.Key, voluntario.Cpf, voluntario.Rg, voluntario.Nome);
+                Mensagens.Mensagem_Erro_Conexao_Base_Dados();
             }
-
-            Utils.InformarConsultaVazia(grdCFuncionario);
         }
 
         private async void grdCFuncionario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

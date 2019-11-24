@@ -5,3 +5,12 @@
 /src/.vs/Member/v16
 /src/obj/**
 /src/bin/**
+/src/.vs/Member/DesignTimeBuild
+/src/Member.Common/bin/Debug
+/src/Member.Common/obj/Debug
+/src/Member.ConsoleApp/obj/Debug
+/src/Member.ConsoleApp/bin/Debug
+/src/Member.Dao/obj/Debug
+/src/Member.Dao/bin/Debug
+/src/Member.WindowsFormsApp/obj
+/src/Member.WindowsFormsApp/bin
