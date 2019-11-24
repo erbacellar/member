@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRelatorioDivulgacao" targetNamespace="http://tempuri.org/dsRelatorioDivulgacao.xsd" xmlns:mstns="http://tempuri.org/dsRelatorioDivulgacao.xsd" xmlns="http://tempuri.org/dsRelatorioDivulgacao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MemberConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MemberConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CashInBox.Properties.Settings.GlobalReference.Default.MemberConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelatorioDivulgacaoTableAdapter" GeneratorDataComponentClassName="RelatorioDivulgacaoTableAdapter" Name="RelatorioDivulgacao" UserDataComponentName="RelatorioDivulgacaoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MemberConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Membros.Nome, Membros.DataNascimento, Membros.GrupoDia, Membros.GrupoHorario, Membros.Email, Membros.Telefone1, Membros.Telefone2, Membros.Telefone3, Membros.Telefone4, 
+                         PesoGrupos.Peso
+FROM            Membros INNER JOIN
+                         PesoGrupos ON Membros.GrupoDia + Membros.GrupoHorario = PesoGrupos.DiaHorario
+WHERE        (Membros.Isento = 0)
+ORDER BY PesoGrupos.Peso</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="DataNascimento" DataSetColumn="DataNascimento" />
+              <Mapping SourceColumn="GrupoDia" DataSetColumn="GrupoDia" />
+              <Mapping SourceColumn="GrupoHorario" DataSetColumn="GrupoHorario" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="Telefone1" DataSetColumn="Telefone1" />
+              <Mapping SourceColumn="Telefone2" DataSetColumn="Telefone2" />
+              <Mapping SourceColumn="Telefone3" DataSetColumn="Telefone3" />
+              <Mapping SourceColumn="Telefone4" DataSetColumn="Telefone4" />
+              <Mapping SourceColumn="Peso" DataSetColumn="Peso" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRelatorioDivulgacao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsRelatorioDivulgacao" msprop:Generator_UserDSName="dsRelatorioDivulgacao">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RelatorioDivulgacao" msprop:Generator_TableClassName="RelatorioDivulgacaoDataTable" msprop:Generator_TableVarName="tableRelatorioDivulgacao" msprop:Generator_RowChangedName="RelatorioDivulgacaoRowChanged" msprop:Generator_TablePropName="RelatorioDivulgacao" msprop:Generator_RowDeletingName="RelatorioDivulgacaoRowDeleting" msprop:Generator_RowChangingName="RelatorioDivulgacaoRowChanging" msprop:Generator_RowEvHandlerName="RelatorioDivulgacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="RelatorioDivulgacaoRowDeleted" msprop:Generator_RowClassName="RelatorioDivulgacaoRow" msprop:Generator_UserTableName="RelatorioDivulgacao" msprop:Generator_RowEvArgName="RelatorioDivulgacaoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataNascimento" msprop:Generator_ColumnVarNameInTable="columnDataNascimento" msprop:Generator_ColumnPropNameInRow="DataNascimento" msprop:Generator_ColumnPropNameInTable="DataNascimentoColumn" msprop:Generator_UserColumnName="DataNascimento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GrupoDia" msprop:Generator_ColumnVarNameInTable="columnGrupoDia" msprop:Generator_ColumnPropNameInRow="GrupoDia" msprop:Generator_ColumnPropNameInTable="GrupoDiaColumn" msprop:Generator_UserColumnName="GrupoDia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GrupoHorario" msprop:Generator_ColumnVarNameInTable="columnGrupoHorario" msprop:Generator_ColumnPropNameInRow="GrupoHorario" msprop:Generator_ColumnPropNameInTable="GrupoHorarioColumn" msprop:Generator_UserColumnName="GrupoHorario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefone1" msprop:Generator_ColumnVarNameInTable="columnTelefone1" msprop:Generator_ColumnPropNameInRow="Telefone1" msprop:Generator_ColumnPropNameInTable="Telefone1Column" msprop:Generator_UserColumnName="Telefone1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefone2" msprop:Generator_ColumnVarNameInTable="columnTelefone2" msprop:Generator_ColumnPropNameInRow="Telefone2" msprop:Generator_ColumnPropNameInTable="Telefone2Column" msprop:Generator_UserColumnName="Telefone2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefone3" msprop:Generator_ColumnVarNameInTable="columnTelefone3" msprop:Generator_ColumnPropNameInRow="Telefone3" msprop:Generator_ColumnPropNameInTable="Telefone3Column" msprop:Generator_UserColumnName="Telefone3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefone4" msprop:Generator_ColumnVarNameInTable="columnTelefone4" msprop:Generator_ColumnPropNameInRow="Telefone4" msprop:Generator_ColumnPropNameInTable="Telefone4Column" msprop:Generator_UserColumnName="Telefone4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Peso" msprop:Generator_ColumnVarNameInTable="columnPeso" msprop:Generator_ColumnPropNameInRow="Peso" msprop:Generator_ColumnPropNameInTable="PesoColumn" msprop:Generator_UserColumnName="Peso" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
